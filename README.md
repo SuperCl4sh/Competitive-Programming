@@ -1,2 +1,1 @@
-# Competitive-Programming
-A repository of my competitive programming solutions.
+##### A repository of my competitive programming solutions
