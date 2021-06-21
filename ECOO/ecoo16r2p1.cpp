@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-//ofstream fout (".out");
-//ifstream fin (".in");
 #define mp make_pair
 #define pb push_back
 #define pf push_front
