@@ -1,9 +1,3 @@
-/*
-ID: 
-TASK: 
-LANG: C++                 
-*/
-
 #include <bits/stdc++.h>
 
 #pragma GCC optimize "Ofast"
