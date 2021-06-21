@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc18s2
 #include <bits/stdc++.h>
 typedef long long ll;
 int n;

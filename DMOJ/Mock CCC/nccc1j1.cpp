@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/nccc1j1
 #include <bits/stdc++.h>
 using namespace std;
 bool hasZero(int n) {

@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc14j2
 #include <cstdio>
 using namespace std;
 

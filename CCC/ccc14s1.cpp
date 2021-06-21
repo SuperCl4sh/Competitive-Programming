@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc14s1
 #pragma GCC optimize "Ofast"
 #include <bits/stdc++.h>
 using namespace std;

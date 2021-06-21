@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/dpe
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -66,3 +67,4 @@ int main() {
 	return 0;
 }
 //similar to the last problem, brute force suffices to AC (DMOJ only)
+

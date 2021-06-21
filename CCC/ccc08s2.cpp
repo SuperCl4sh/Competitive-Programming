@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc08s2
 #include <bits/stdc++.h>
 using namespace std;
 long long pennies,x,y;

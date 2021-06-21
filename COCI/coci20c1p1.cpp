@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/coci20c1p1
 #pragma GCC optimize "Ofast"
 #include <bits/stdc++.h>
 using namespace std;

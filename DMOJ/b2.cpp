@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/b2
 #include <string>
 #include <iostream>
 #include <bits/stdc++.h>

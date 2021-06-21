@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/dwite07c2p1
 #include <bits/stdc++.h>
 using namespace std;
 string s="not";

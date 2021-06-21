@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/occ19s2
 #include <bits/stdc++.h>
 using namespace std;
 long long k,counter=0;

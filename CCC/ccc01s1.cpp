@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc01s1
 #include <bits/stdc++.h>
 using namespace std;
 

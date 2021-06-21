@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc06s1
 #include <bits/stdc++.h>
 using namespace std;
 int possib[5]={-2,-2,-2,-2,-2};

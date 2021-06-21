@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ecoo13r1p2
 #include <bits/stdc++.h>
 //g++ -std=c++14 t.cpp -o f.exe
 #pragma GCC optimize "Ofast"

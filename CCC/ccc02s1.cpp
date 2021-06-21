@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc02s1
 #include <bits/stdc++.h>
 using namespace std;
 int p,g,r,o,comb=0,small=INT_MAX;int done[10000][5];

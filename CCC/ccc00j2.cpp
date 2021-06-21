@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc00j2
 #include <bits/stdc++.h>
 using namespace std;
 int total=0,n,m;string b;

@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/globexcup19s1
 #include <bits/stdc++.h>
 //g++ -std=c++14 t.cpp -o f.exe
 #pragma GCC optimize "Ofast"

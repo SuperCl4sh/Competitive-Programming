@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc20j1
 #include <cstdio>
 typedef long long ll;
 using namespace std;

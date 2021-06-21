@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/bf1easy
 #include <bits/stdc++.h>
 
 using namespace std;

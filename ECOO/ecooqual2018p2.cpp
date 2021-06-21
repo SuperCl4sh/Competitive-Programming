@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ecooqual2018p2
 #pragma GCC optimize "Ofast"
 #include <bits/stdc++.h>
 using namespace std;

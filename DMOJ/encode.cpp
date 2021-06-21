@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/encode
 #include <bits/stdc++.h>
 using namespace std;
 #define mp make_pair

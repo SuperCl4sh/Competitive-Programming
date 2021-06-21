@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/boolean
 #include <bits/stdc++.h>
 
 using namespace std;

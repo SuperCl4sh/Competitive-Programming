@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc11j5
 #include <bits/stdc++.h>
 using namespace std;
 int n,dp[7]={-1,-1,-1,-1,-1,-1,-1};
