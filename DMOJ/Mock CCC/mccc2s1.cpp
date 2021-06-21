@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/mccc2s1
 #include <bits/stdc++.h>
 typedef long long ll;
 

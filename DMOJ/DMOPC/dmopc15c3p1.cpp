@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/dmopc15c3p1
 #pragma GCC optimize "Ofast"
 #include <bits/stdc++.h>
 typedef long long ll;

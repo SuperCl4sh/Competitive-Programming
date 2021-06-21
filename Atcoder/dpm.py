@@ -1,3 +1,4 @@
+#https://dmoj.ca/problem/dpm
 N,K=map(int,input().split())
 ar=[0]+list(map(int,input().split()))
 MOD=(int)(1e9)+7
@@ -14,4 +15,5 @@ for i in range(1,N+1):
             dp[i][j]+=psa[j]-psa[j-ar[i]-1];
             dp[i][j]%=MOD
 print(dp[N][K])
+
 

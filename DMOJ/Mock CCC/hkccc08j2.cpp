@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/hkccc08j2
 #include <bits/stdc++.h>
 using namespace std;
 long long g=0;

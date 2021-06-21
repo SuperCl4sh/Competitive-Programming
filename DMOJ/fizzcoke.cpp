@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/fizzcoke
 #include <bits/stdc++.h>
 using namespace std;
 

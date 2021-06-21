@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/mockccc14s1
 #include <bits/stdc++.h>
 using namespace std;
 #define mp make_pair

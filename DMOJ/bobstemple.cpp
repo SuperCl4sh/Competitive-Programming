@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/bobstemple
 #include <bits/stdc++.h>
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"

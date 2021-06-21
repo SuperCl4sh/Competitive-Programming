@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc10j5
 #include <bits/stdc++.h>
 using namespace std;
 bool visited[100][100];

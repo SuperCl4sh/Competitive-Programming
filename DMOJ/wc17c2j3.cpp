@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/wc17c2j3
 #include <bits/stdc++.h>
 using namespace std;
 int counter=0,n;

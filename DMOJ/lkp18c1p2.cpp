@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/lkp18c1p2
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;

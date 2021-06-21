@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/primes2
 #include <bits/stdc++.h>
 using namespace std;
 //#pragma GCC target ("avx2") #pragma GCC optimization ("O3") #pragma GCC optimization ("unroll-loops")

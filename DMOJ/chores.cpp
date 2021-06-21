@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/chores
 #include <bits/stdc++.h>
 
 #pragma GCC optimize "Ofast"

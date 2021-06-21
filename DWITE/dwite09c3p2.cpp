@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/dwite09c3p2
 #include <bits/stdc++.h>
 using namespace std;
 long long  b,c;

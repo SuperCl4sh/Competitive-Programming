@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/nccc6j1
 #include <bits/stdc++.h>
 #include <iostream>
 using namespace std;

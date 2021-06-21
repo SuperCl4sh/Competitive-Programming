@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/mec16p3
 #include <bits/stdc++.h>
 
 #pragma GCC optimize "Ofast"

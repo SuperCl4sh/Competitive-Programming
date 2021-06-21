@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/ccc04j1
 #include <iostream>
 #include <bits/stdc++.h>
 #include <cmath>
