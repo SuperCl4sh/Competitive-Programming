@@ -1,9 +1,3 @@
-/*
-ID:
-TASK: 
-LANG: C++                 
-*/
-
 #include <bits/stdc++.h>
 using namespace std;
 //ofstream fout (".out");
