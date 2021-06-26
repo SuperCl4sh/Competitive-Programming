@@ -34,3 +34,8 @@
 # Vim
 *.*~
 *.*.swp
+
+#Input/Output
+*.in
+*.out
+
