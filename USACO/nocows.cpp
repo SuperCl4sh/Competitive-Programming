@@ -1,5 +1,3 @@
-//https://www.youtube.com/watch?v=GYrZsipOp-U
-//^good explanation
 /*
 ID: 
 TASK: nocows
