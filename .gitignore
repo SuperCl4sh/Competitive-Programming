@@ -37,5 +37,6 @@
 
 #Input/Output
 *.in
+*.txt
 *.out
 
