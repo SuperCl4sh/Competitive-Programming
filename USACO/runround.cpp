@@ -3,9 +3,7 @@ ID:
 TASK: runround
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -78,17 +76,12 @@ void solve(ll n) {
 		++n;
 	}
 	fout << n << "\n";
-
-
-
-
 	return;
 }
 int main() {
 	boost;
 	ll m;
 	fin >> m;
-
 	solve(m);
 	return 0;
 }

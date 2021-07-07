@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -55,6 +54,5 @@ int main() {
     }
    (dp[k])?printf("First\n"):printf("Second\n"); 
     return 0;
-
 }
 

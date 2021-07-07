@@ -3,9 +3,7 @@ ID:
 TASK: wormhole
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -48,10 +46,8 @@ const ll high= (ll)(1e15);
 const ll MOD2 = 998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int Right[13],n,partner[13],ans=0;
 vector<pll>coord;
-
 bool check() {
 	int a;
 	for (int i=0;i<n;i++) {
@@ -64,7 +60,6 @@ bool check() {
 	}
        return 0;	
 }
-
 void solve() {
 	int i=0;
 	bool bad=0;
@@ -72,7 +67,6 @@ void solve() {
 		if (partner[i]==-1) {bad=1;break;}
 		
 	}
-
 	if (!bad) {
 		if (check()) ++ans;
 		return;
@@ -86,8 +80,6 @@ void solve() {
 			partner[j]=-1;
 		}
 	
-
-
 	return;
 }
 int main() {
@@ -115,7 +107,6 @@ int main() {
     mem(partner,-1);
     solve();
     fout << ans << "\n";
-
-
     return 0;
 }
+

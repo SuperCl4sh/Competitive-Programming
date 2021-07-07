@@ -32,6 +32,6 @@ using namespace std;
         }
     }
     cout << "magic" << endl;
-
     return 0;
  }
+

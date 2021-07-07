@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/ccc21s2
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
     int m,n,k;
@@ -26,3 +24,4 @@ int main() {
     cout << ans << "\n";
     return 0;
 }
+

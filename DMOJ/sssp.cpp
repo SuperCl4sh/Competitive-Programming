@@ -56,7 +56,6 @@ for (int i=0;i<n-1;i++) {
 		if (dist[curr]!=mxN&&dist[curr]+weight<dist[target]) {
 			dist[target]=dist[curr]+weight;
 		}
-
 	}
 }
 for (int i=1;i<=n;i++) {
@@ -75,7 +74,6 @@ int main() {
 		edges.pb(mp(c,mp(a,b)));
 		edges.pb(mp(c,mp(b,a)));
 		continue;
-
 	}
 	else {
 		for (int j=0;j<sz(edges);j++) {
@@ -105,5 +103,5 @@ int main() {
     }
     solve();
     return 0;
-
 }
+

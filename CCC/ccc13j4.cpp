@@ -1,13 +1,11 @@
 //https://dmoj.ca/problem/ccc13j4
 #include <bits/stdc++.h>
 using namespace std;
-
 int solve (vector<int> ar, int t, int counter) {
 int total=INT_MIN;
 if (ar.empty() || t==0) {
     return counter;
 }
-
 int i=0,g=0;
 while (i<ar.size()) {
     if (ar[i]<=t) {
@@ -17,15 +15,12 @@ while (i<ar.size()) {
         total=max(total,solve(ar,t-g,counter+1));
         i=0;
     }
-
     else {
         i++;
     }
     //cout << total << endl;
 }
-
 return total;
-
 }
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -45,3 +40,4 @@ cout << solve(ar,t,0) << endl;
 }
 return 0;
 }
+

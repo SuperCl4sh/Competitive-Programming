@@ -47,7 +47,6 @@ int main() {
 	for (int i=0;i<sz(a);i++) {
 		freq[a[i]-'a']++;
 	}
-
 	int currFreq[26];
 	memset(currFreq,0,sizeof(currFreq));
 	for (int j=0;j<sz(a);j++) {
@@ -77,7 +76,6 @@ int main() {
 			Hash%=MOD;
 			Hash*=prime;
 			Hash%=MOD;
-
 			Hash2-=((((ll)(b[i-1]))*P_Pow[0])%MOD2);
 			Hash2+=MOD2;
 			Hash2%=MOD2;
@@ -102,3 +100,4 @@ int main() {
 	cout << sz(ans) << "\n";
 	return 0;
 }
+

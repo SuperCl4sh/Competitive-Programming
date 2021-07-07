@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/nccc3j2
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     string s,g,h,v,k;
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -31,3 +30,4 @@ using namespace std;
     cout << "NO" << endl;
     return 0;
  }
+

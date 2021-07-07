@@ -34,6 +34,6 @@ return;
     string t,s;
     cin >> t >> s;
     solve(t,s);
-
     return 0;
  }
+

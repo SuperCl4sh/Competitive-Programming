@@ -19,15 +19,12 @@ void solve (ll a) {
             return;
         }
         a/=2;
-
         if (a%2) {
         cout << "F" << endl;
         return;
         }
-
     }
     cout << "F" << endl;
-
 return;
 }
  int main() {
@@ -41,3 +38,4 @@ return;
     }
     return 0;
  }
+

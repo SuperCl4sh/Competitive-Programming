@@ -30,7 +30,6 @@ using namespace std;
             m=0;
         }
         h%=24;
-
     }
     a=to_string(h);b=to_string(m);
     if (a.length()==1) {
@@ -48,3 +47,4 @@ using namespace std;
     }
     return 0;
  }
+

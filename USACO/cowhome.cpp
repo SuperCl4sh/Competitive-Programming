@@ -3,7 +3,6 @@ ID:
 TASK: comehome
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 ofstream fout ("comehome.out");
@@ -47,7 +46,6 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 vector<vector<pii>>adj(60);
 str alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 bool visited[60];
@@ -68,7 +66,6 @@ int bfs(int node) {
 	}
 	return (curr==25)?dist:INT_MAX;
 }
-
 int main() {
 	boost;
 	int a,b,e,f,p;char c,d;
@@ -87,18 +84,15 @@ int main() {
 	}
 	char g;
 	int ans=INT_MAX;
-
 	FOR (i,0,25) {
 		if (!adj[i].empty()) {
 			int curr=bfs(i);
 			if (curr<ans) ans=curr,g=alphabet[i]; 
-
 		}
 	}
 	fout << g << " "<<ans << "\n";
 	
-
 	
-
 	return 0;
 }
+

@@ -46,12 +46,8 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 vector<pair<int,pii>>edges;
 int sizes[105],ar[105];
-
-
-
 int par(int a) {
 	while (ar[a]!=a) {
 		ar[a]=ar[ar[ar[ar[a]]]];
@@ -59,7 +55,6 @@ int par(int a) {
 	}
 	return a;
 }
-
 void Union(int a, int b) {
 	int A=par(a),B=par(b);
 	if (sizes[A]>sizes[B]) {
@@ -72,13 +67,10 @@ void Union(int a, int b) {
 	}
 	return;
 }
-
 void init() {
 	FOR (i,0,100) ar[i]=i,sizes[i]=1;
 	return;
 }
-
-
 void construct() {
 	sort(all(edges));
 	int node1,node2,weight,ret=0;
@@ -91,8 +83,6 @@ void construct() {
 	}
 	fout << ret << "\n";
 	return;
-
-
 }
 int main() {
 	boost;
@@ -108,7 +98,6 @@ int main() {
 	
 	}
 	construct();
-
-
 	return 0;
 }
+

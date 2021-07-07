@@ -5,14 +5,12 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 /*
 #pragma GCC target ("avx2")
 #pragma GCC optimization ("O3")
 #pragma GCC optimization ("unroll-loops")
 */
 //^speed
-
 //typedefs
 typedef long long ll;
 typedef string str;
@@ -24,7 +22,6 @@ typedef pair<double,double>pdd;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
 //defines
 #define mp make_pair
 #define pb push_back
@@ -55,7 +52,6 @@ typedef pair<str,str>pss;
 #define rando(a,b) rand()%(b-a)+a
 #define pc putchar
 #define gc getchar
-
 //input
 template <typename T> void read(T& num) {
 	num=0;
@@ -66,13 +62,11 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
-
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
-
 }
 void read(ld &num) {
 	str s="";
@@ -95,7 +89,6 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 template <typename G> void read(vt<G>&ar) {
 	EACH(a,ar) 
 		read(a);
-
 }
 template <typename H, typename... Types> void read(H&  num, Types&... num1) {
 	read(num);
@@ -112,7 +105,6 @@ void out(int n) {
 	else if (n>9) out(n/10);
 	pc(char((n%10)+'0'));
 }
-
 void out(ll n) {
 	if (n<0) {
 		pc('-');
@@ -133,7 +125,6 @@ void out (ld a) {
 	str s=to_string(a);
 	out(s);
 }
-
 void out(double a) {
 	str s=to_string(a);
 	out(s);
@@ -144,7 +135,6 @@ void out (const char *s) {
 		out(s[i]);
 	}
 }
-
 template<typename T,typename M> void out(pair<T,M>a) {
 	out(a.F);
 	pc(' ');
@@ -154,10 +144,8 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
-
 	}
 }
-
 template <typename h, typename... types> void out(h s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) pc(' ');
@@ -177,7 +165,6 @@ template<typename v> void writeln(v s) {
 	out(s);
 	pc('\n');
 }
-
 template<typename v, typename... others> void outln(v s, others... s1) {
 	out(s);
 	out(' ');
@@ -188,7 +175,6 @@ template<typename v> void outln(v s) {
 	out(s);
 	pc('\n');
 }
-
 template <typename T,typename S> ll Pow(T a, S b) {
 	ll ret=1;
 	while (b) {
@@ -196,7 +182,6 @@ template <typename T,typename S> ll Pow(T a, S b) {
 	}
 	rtn ret;
 }
-
 template <typename T, typename S, typename M> T Pow(T a, S b, M mod) {
 	ll ret=1;
 	while (b) {
@@ -207,18 +192,15 @@ template <typename T, typename S, typename M> T Pow(T a, S b, M mod) {
 void Time(clock_t start) {
 	writeln("Process took ",(clock()-start)/double(CLOCKS_PER_SEC)," seconds.");
 }
-
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1};
 const int dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 clock_t start;
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 int stop=(int)(1e6);
 set<int>boxes;
 vt<int>ar;
 bitset<(int)(1e6)+2>vis;
-
 void solve() {
 	queue<int>q;
 	q.P(0);
@@ -235,7 +217,6 @@ void solve() {
 			}
 		}
 	}
-
 }
 int Find(str s) {
 	rep (i,1,sz(s)) {
@@ -244,7 +225,6 @@ int Find(str s) {
 	assert(0);
 	rtn -1;
 }
-
 int main() {
 	boost;
 	start=clock();
@@ -270,7 +250,6 @@ int main() {
 	each (a,boxes) {
 		even+=!(a&1),odd+=a&1;
 	}
-
 	if (even&&odd||odd>=2) {
 		each (a,boxes) ar.pb(a);
 		solve();
@@ -280,11 +259,7 @@ int main() {
 	else {
 		outln(0);
 	}
-
 	
-
 	rtn 0;
 }
-
-
 

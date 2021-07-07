@@ -13,11 +13,9 @@ if (d<=k) {
     counter++;
     solve(d);
 }
-
 else {
     return;
 }
-
 if (e<=k) {
     counter++;
     solve(e);
@@ -26,8 +24,6 @@ else {
     return;
 }
 return;
-
-
 }
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -36,3 +32,4 @@ solve(0);
 cout << counter << endl;
 return 0;
 }
+

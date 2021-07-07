@@ -13,7 +13,6 @@ typedef pair<double,double>pdd;
 typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int x,y,z,n,m;
@@ -38,3 +37,4 @@ typedef pair<ld,ld>pld;
     }
     return 0;
  }
+

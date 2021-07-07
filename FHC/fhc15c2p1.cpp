@@ -29,7 +29,6 @@ void solve () {
 ans="";
 int n,a;
 cin >> n;
-
 deque<int>q,dq,s;
 for (int i=0;i<n;i++) {	
 	cin >> a;
@@ -59,10 +58,7 @@ while (!q.empty()) {
 		q.PB();
 	}
 	else {ans="no";break;}
-
-
 }
-
 while (!dq.empty()) dq.PF();
 if (ans=="no") {
 	while (!s.empty()) {
@@ -88,13 +84,9 @@ if (ans=="no") {
 		s.PB();
 	}
 	else {return;}
-
-
 }
 }
 ans="yes";
-
-
 }
  int main() {
     boost;
@@ -107,3 +99,4 @@ ans="yes";
     }
     return 0;
  }
+

@@ -40,34 +40,28 @@ const ll MOD = 1000000007;
 const ll mxN= (ll)(1e15);
 const ll MOD2=998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 ll r,c,ro,x,y,ans=0;
 map<int,map<int,int>>board;
 void solve() {
 int sx=x,sy=y;
 while (x>0) {
-
 board[x][y]++,x--;
 }
 x=sx;
 while (x<=r) {
-
 board[x][y]++,++x;
 }
 x=sx;
 while (y>0) {
-
 board[x][y]++,y--;
 }
 y=sy;
 while (y<=c) {
-
 board[x][y]++,++y;
 }
 y=sy;
 return;
 }
-
 int main() {
 	boost
 	ll counter=0;
@@ -91,3 +85,4 @@ int main() {
 	}
 	return 0;
 }
+

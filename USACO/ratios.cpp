@@ -5,7 +5,6 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -46,11 +45,8 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 int a,b,c,ar[3][3];
-
 int main() {
 	boost;
 	freopen("ratios.in","r",stdin);
@@ -68,7 +64,6 @@ int main() {
 				bool bad=0,bad2=0;
 				A+=ar[2][0]*k,B+=ar[2][1]*k,C+=ar[2][2]*k;
 				currTot=i+j+k;
-
 				if (a==0&&A>0) bad=1;
 				if (b==0&&B>0) bad=1;
 				if (c==0&&C>0) bad=1;
@@ -80,10 +75,8 @@ int main() {
 							done=1;
 						}
 					}
-
 				
 				}
-
 				A-=ar[2][0]*k,B-=ar[2][1]*k,C-=ar[2][2]*k;
 			
 			}
@@ -96,3 +89,4 @@ int main() {
 	else cout << "NONE\n";
 	return 0;
 }
+

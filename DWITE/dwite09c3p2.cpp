@@ -9,8 +9,6 @@ while (true) {
         break;
     }
     b^=c;c^=b;b^=c;c+=b;
-
-
 }
 if (n-b<abs(n-c)) {
     cout << b << endl;
@@ -22,7 +20,6 @@ else {
     cout << c << endl;
 }
 return;
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -33,3 +30,4 @@ return;
     }
     return 0;
  }
+

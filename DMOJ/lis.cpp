@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/lis
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -63,14 +62,10 @@ int main() {
 		}
 		else {
 			if (a>val) curr.insert(a);
-
 		}
-
 	}	
 	cout << sz(curr) << "\n";
-
 	
-
-
 	return 0;
 }
+

@@ -10,7 +10,6 @@ for _ in range(T):
     left=0
     right=min(len(A),len(B))+1
     mid=0
-
     while right-left>1:
         mid=left+right>>1
         if good(mid): left=mid

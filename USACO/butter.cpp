@@ -5,7 +5,6 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -46,11 +45,8 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 int dist[805][805];
-
 int main() {
 	boost;
 	mem(dist,0x3f3f3f);
@@ -91,3 +87,4 @@ int main() {
 	
 	return 0;
 }
+

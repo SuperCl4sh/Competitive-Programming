@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/hkccc15j1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,a=0,b=0;string s;
@@ -21,3 +20,4 @@ using namespace std;
     printf("%i %i\n",a,b);
     return 0;
  }
+

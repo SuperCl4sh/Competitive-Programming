@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/a3
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -65,7 +64,6 @@ void solve() {
 		increment+=1000LL-last+192LL;
 	}
 	
-
 	cout << a+increment << "\n";
 	return;
 }
@@ -77,8 +75,6 @@ int main() {
 		cin >> a;
 		solve();
 	}
-
-
-
 	return 0;
 }
+

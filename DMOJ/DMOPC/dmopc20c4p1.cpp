@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/dmopc20c4p1
 #include <bits/stdc++.h>
-
 using namespace std;
 typedef long long ll;
 ll target,n,s;
@@ -33,3 +32,4 @@ int main() {
 	
 	return 0;
 }
+

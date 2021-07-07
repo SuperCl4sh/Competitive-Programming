@@ -48,8 +48,8 @@ int main() {
 		if (curr>=n) break;
 		if (counter==-1) counter=0;
 		else if (counter==0) {counter=-1;increment+=2;}
-
 	}
 	cout << ans << "\n";
 	return 0;
 }
+

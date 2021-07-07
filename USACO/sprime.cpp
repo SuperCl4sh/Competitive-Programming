@@ -3,9 +3,7 @@ ID:
 TASK: sprime
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -50,14 +48,12 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 vi ans;int N;
 bool prime(int n) {
-
 	for (int i=2;i<=(int)(sqrt(n));i++) {
 		if (n%i==0) return 0;
 	}
 	return 1;
 }
 bool valid(int n) {
-
 	while (n>0) {
 		if (n==1) return 0;
 		if (!prime(n)) return 0;
@@ -84,3 +80,4 @@ int main() {
     }
     return 0;
 }
+

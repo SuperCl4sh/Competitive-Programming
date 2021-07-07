@@ -21,3 +21,4 @@ class Solution:
         return 0
 a=Solution().longestPalindrome
 a(input())
+

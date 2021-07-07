@@ -3,9 +3,7 @@ ID:
 TASK: crypt1 
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -60,7 +58,6 @@ bool valid(int a) {
 	if (counter>good+3) return 0;
 	return 1;
 }
-
 int main() {
     boost;
     int a,n;
@@ -96,3 +93,4 @@ int main() {
     
     return 0;
 }
+

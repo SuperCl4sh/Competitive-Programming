@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/dmopc20c5p2
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -50,7 +49,6 @@ clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 int main() {
 	boost;
-
 	ll n,m;
 	cin >> n >> m;
 	bool swapped=0;
@@ -78,3 +76,4 @@ int main() {
 	FOR (i,0,sz(ar),1) cout << ar[i].F << " " << ar[i].S << "\n";
 	return 0;
 }
+

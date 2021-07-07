@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/gfssoc16j1
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
@@ -43,7 +41,6 @@ for (int i=0;i<4;i++) {
     }
 }
 cout << "YEA BOI" << endl;
-
 return 0;
-
 }
+

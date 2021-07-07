@@ -23,7 +23,6 @@ typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
-
  int main() {
     boost;
     int n;double a,b,c,d,e,f,s1,s2,s3,p,A;
@@ -39,3 +38,4 @@ char _;
     }
     return 0;
  }
+

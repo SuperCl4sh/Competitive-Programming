@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ccc21s1
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -44,11 +43,8 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 void Print(auto &temp) {for (auto x: temp) cout << x << " ";cout << "\n";return;}
-
-
 int main() {
     boost;
-
     int n;
     cin >> n;
     double ar[n+1],ans=0,a;
@@ -58,6 +54,6 @@ int main() {
 	ans+=((ar[i]+ar[i+1])*a)/2.0;
     }
     cout << sp(2) << ans << "\n";
-
     return 0;
 }
+

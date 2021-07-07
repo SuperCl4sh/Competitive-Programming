@@ -18,7 +18,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
  int main() {
     boost;
     str s;int ind;
@@ -36,3 +35,4 @@ typedef pair<str,str>pss;
     (counter==1||counter==-1)?printf("YES\n"):printf("NO\n");
     return 0;
  }
+

@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -42,8 +41,6 @@ ld solve(ld a,ld b, ld c) {
 	if (solve(a+1.0,b-1.0,c)) B=1.0;
 	if (solve(a,b+1.0,c-1.0)) C=1.0;
 	return dp[int(a)][int(b)][int(c)]=((n-a-b-c)+(solve(a-1.0,b,c)+A)*a+(solve(a+1.0,b-1.0,c)+B)*b+(solve(a,b+1.0,c-1.0)+C)*c)/(a+b+c);
-
-
 }
 int main() {
     boost;
@@ -58,6 +55,5 @@ int main() {
     cout << sp(9) << solve(ar[0],ar[1],ar[2])-1.0 << "\n";
     
     return 0;
-
 }
 

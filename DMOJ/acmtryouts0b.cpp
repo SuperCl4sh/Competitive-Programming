@@ -9,8 +9,6 @@ for (int i=a.length()-1;i>=0;i--) {
     ans+=a[i];
 }
 return;
-
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -23,3 +21,4 @@ return;
     }
     return 0;
  }
+

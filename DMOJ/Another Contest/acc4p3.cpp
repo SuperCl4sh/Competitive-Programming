@@ -21,9 +21,6 @@ typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
 bool f(int N) {
-
-
-
 return 0;
 }
  int main() {
@@ -31,3 +28,4 @@ return 0;
     
     return 0;
  }
+

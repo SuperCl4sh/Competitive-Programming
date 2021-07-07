@@ -31,7 +31,6 @@ int freq[15];
     for (int i=0;i<n;i++) {
         cin >> ar[i];
     }
-
     memset(freq,0,sizeof(freq));
     for (int i=0;i<n;i++) {
         freq[ar[i]]++;
@@ -43,3 +42,4 @@ int freq[15];
     cout << num << "\n";
     return 0;
  }
+

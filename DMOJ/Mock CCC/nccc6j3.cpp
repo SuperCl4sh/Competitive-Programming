@@ -17,8 +17,6 @@ if (tot==c) {
 solve(tot+a);
 solve(tot+b);
 return;
-
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -29,7 +27,7 @@ return;
        ans="NO";
        solve(0);
        cout << ans << endl;
-
     }
     return 0;
  }
+

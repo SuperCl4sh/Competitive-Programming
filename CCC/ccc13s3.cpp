@@ -25,7 +25,6 @@ int t,ans=0;
 vector<vector<int>>done;
 void solve(bool ar[10][10],int total[7],vector<int>moves) {
 bool changed=0;
-
 for (int i=1;i<=4;i++) {
     for (int j=i+1;j<=4;j++) {
         if (ar[i][j]==0) {
@@ -75,7 +74,6 @@ return;
         ar[a][b]=1,ar[b][a]=1;
         if (c>d) {
             tot[a]+=3;
-
         }
         else if (d>c) {
             tot[b]+=3;
@@ -89,3 +87,4 @@ return;
     cout << done.size() << "\n";
     return 0;
  }
+

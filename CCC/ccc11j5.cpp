@@ -7,13 +7,11 @@ int ans=1;
 if (dp[y]!=-1) {
     return dp[y];
 }
-
 for (int i=0;i<n;i++) {
     if (ar[i]==y) {
         ans*=(solve(ar,i+1)+1);
     }
 }
-
 dp[y]=ans;
 return dp[y];
 }
@@ -28,3 +26,4 @@ return dp[y];
     cout << solve(ar,n) << endl;
     return 0;
  }
+

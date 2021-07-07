@@ -18,8 +18,6 @@ if (dp[pie][rem][prev]==0) {
     dp[pie][rem][prev]=tot;
 }
 return dp[pie][rem][prev];
-
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -28,3 +26,4 @@ return dp[pie][rem][prev];
     cout << solve(n,k,1) << endl;
     return 0;
  }
+

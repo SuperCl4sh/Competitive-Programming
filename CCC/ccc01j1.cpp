@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc01j1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n;string s;
@@ -12,7 +11,6 @@ using namespace std;
         for (int f=0;f<2*n;f++) {
             if (f<=i || f>=j) {
                 s+="*";
-
             }
             else if (f+1>=j) {
                     s+="*";
@@ -42,3 +40,4 @@ using namespace std;
     }
     return 0;
  }
+

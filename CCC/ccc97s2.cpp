@@ -22,9 +22,6 @@ for (int i=1;i<=sqrt(a);i++) {
     }
 }
 return;
-
-
-
 }
 void solve() {
 cin >> a;
@@ -39,8 +36,6 @@ for (int i=0;i<=divide.size();i++) {
     }
 }
 cout << a << " is not nasty" << endl;
-
-
 return;
 }
  int main() {
@@ -52,3 +47,4 @@ return;
     }
     return 0;
  }
+

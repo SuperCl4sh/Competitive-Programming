@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc01s1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     string s,g;int total=0,tempTotal=0;
@@ -12,7 +11,6 @@ using namespace std;
         if (s[i]=='C' || s[i]=='D'||s[i]=='H'||s[i]=='S') {
                 ar.push_back(g);
                 g="";
-
             }
             else {
                 g+=s[i];
@@ -54,6 +52,6 @@ using namespace std;
         tempTotal=0;
      }
      cout << "Total " << total << endl;
-
     return 0;
  }
+

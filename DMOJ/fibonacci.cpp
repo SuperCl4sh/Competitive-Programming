@@ -40,7 +40,6 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 void fib(ull n) {
 	ull start[2][2]={{1ULL,1ULL},{1ULL,0ULL}},mult[2][2]={{1ULL,1ULL},{1ULL,0ULL}};
 	while (n) {
@@ -70,21 +69,16 @@ void fib(ull n) {
 			FOR (j,0,2) mult[i][j]=New[i][j];
 		}
 		n>>=1;
-
 	}
 	cout << start[1][1]%MOD << "\n";
-
-
 	return;
 }
-
 int main() {
 	boost;
 	
 	ull n;
 	cin >> n;
-
 	fib(n);
-
 	return 0;
 }
+

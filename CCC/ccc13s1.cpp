@@ -12,10 +12,8 @@ bool checker(int num) {
             if (arr[(int)toString[c]-48]) {
                 return false;
             }
-
             int t= (int)toString[c]-48;
             arr[t]++;
-
     }
     return true;
 }
@@ -31,9 +29,8 @@ int main () {
             else {
                 y++;
             }
-
     }
     cout << y << endl;
     return 0;
-
 }
+

@@ -17,7 +17,6 @@ void solve (vector<vector<int>>ar) {
             field.push_back(columns);
             columns.clear();
         }
-
     for (int i=0;i<n;i++) {
         for (int j=0;j<n-1;j++) {
             if (field[i][j]<field[i][j+1]) {}
@@ -44,7 +43,6 @@ void solve (vector<vector<int>>ar) {
             }
         }
     }
-
     if (broken) {
         for (int b=0;b<n;b++) {
             for (int a=0;a<n;a++) {
@@ -62,20 +60,11 @@ void solve (vector<vector<int>>ar) {
                 cout << field[g][w] << endl;
             }
         }
-
-    }
-
-
-    return;
-
-
-
-
     }
     return;
-
+    }
+    return;
 }
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a;
@@ -93,3 +82,4 @@ void solve (vector<vector<int>>ar) {
     solve(ar);
     return 0;
  }
+

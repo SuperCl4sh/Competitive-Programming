@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/segtree
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -45,7 +44,6 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll ar[100005],tree[100005];int n,m;
-
 void construct() {
 	for (int i=n-1;i>=0;i--) {
 		tree[i+n]=ar[i];
@@ -79,7 +77,6 @@ void calc(ll a, ll b) {
 	}
 	cout << ret << "\n";
 }
-
 int main() {
 	boost;
 	ll a,b;
@@ -104,3 +101,4 @@ int main() {
 	
 	return 0;
 }
+

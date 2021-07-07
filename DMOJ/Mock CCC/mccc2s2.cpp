@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/mccc2s2
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n;
@@ -29,3 +28,4 @@ using namespace std;
     cout << endl;
     return 0;
  }
+

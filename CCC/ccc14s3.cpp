@@ -17,7 +17,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     ll a,n,t,curr;bool gone;
@@ -25,7 +24,6 @@ typedef pair<str,str>pss;
     deque<ll>branch,mtn;
     for (int i=0;i<t;i++) {
         curr=1;
-
         cin >> n;
         for (int j=0;j<n;j++) {
             cin >> a;
@@ -35,7 +33,6 @@ typedef pair<str,str>pss;
             gone=0;
             if (mtn.empty()&&branch.empty()) {
                 cout << "Y" << endl;
-
                 break;
         }
         if (!branch.empty()) {
@@ -66,9 +63,6 @@ typedef pair<str,str>pss;
                     curr++;
                 }
             }
-
-
-
         }
         while (!mtn.empty()) {
             mtn.pop_front();
@@ -79,3 +73,4 @@ typedef pair<str,str>pss;
     }
     return 0;
  }
+

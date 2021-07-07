@@ -42,7 +42,6 @@ return;
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a,b,n;
     cin >> n;
-
     for (int i=0;i<n;i++) {
         cin >> a;
         for (int j=0;j<a;j++) {
@@ -53,3 +52,4 @@ return;
     bfs(n);
     return 0;
  }
+

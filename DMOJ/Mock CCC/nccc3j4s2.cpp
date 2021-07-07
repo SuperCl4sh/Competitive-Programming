@@ -7,7 +7,6 @@ typedef pair<int,int> pii;
 typedef pair<ll,ll>pll;
 typedef long double ld;
 typedef unsigned long long ull;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a,n;
@@ -27,3 +26,4 @@ typedef unsigned long long ull;
     cout << ans[(int)(n/2)] << endl;
     return 0;
  }
+

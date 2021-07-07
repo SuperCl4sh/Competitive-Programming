@@ -22,6 +22,6 @@ using namespace std;
     else {
         printf("sad\n");
     }
-
     return 0;
  }
+

@@ -3,9 +3,7 @@ ID:
 TASK: dualpal
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -76,7 +74,6 @@ str convert(int start, int base) {
 		}
 		else ans+=alphabet[ar[i]-10];
 	}
-
 	return ans;
 }
 void solve(int n,int e) {
@@ -108,3 +105,4 @@ int main() {
     
     return 0;
 }
+

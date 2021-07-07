@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/dmopc14c5p2
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
 int n;
 int a,b,highest=1;
@@ -12,5 +10,5 @@ for (int i=0;i<n;i++) {
     highest=max(highest,b-a);
 }
 cout << highest << endl;
-
 }
+

@@ -12,7 +12,6 @@ char _;
 const ll MOD = 1000000007;
 const ll mxN= (ll)(1e15);
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int main() {
     boost;
     str a,b;
@@ -27,7 +26,6 @@ int main() {
 		else dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
 	}
     }
-
     int ptr1=len(a),ptr2=len(b);
     str ans="",g;
     while (ptr1!=0&&ptr2!=0) {
@@ -42,6 +40,5 @@ int main() {
     reverse(ans.begin(),ans.end());
     cout << ans << "\n";
     return 0;
-
 }
 

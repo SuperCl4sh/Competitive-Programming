@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc20s2
 #include <bits/stdc++.h>
 using namespace std;
-
 vector<vector<pair<int,int>>> ar(1000010);
 bool bfs (int m,int n) {
 bool visited[1010][1010];
@@ -24,8 +23,6 @@ while (!q.empty()) {
     }
 }
 return false;
-
-
 }
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -43,6 +40,6 @@ if (bfs(m,n)) {
 else {
     cout << "no" << endl;
 }
-
 return 0;
 }
+

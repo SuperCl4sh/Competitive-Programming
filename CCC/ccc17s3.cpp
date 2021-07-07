@@ -63,3 +63,4 @@ int main() {
 	cout << curr << " " << ans << "\n";
 	return 0;
 }
+

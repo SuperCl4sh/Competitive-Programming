@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ds1
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -44,10 +43,8 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 ll tree[100005],tree2[100005],freq[100005],n;
 vll ar(1);
-
 ll add(ll ind) {
 	ll ret=0;
 	while (ind>0) {
@@ -55,20 +52,15 @@ ll add(ll ind) {
 		ind-=ind&(-ind);
 	}
 	return ret;
-
 }
-
 void update(ll ind, ll val) {
-
 	
 	while (ind<=n) {
 		tree[ind]+=val;
 		ind+=ind&(-ind);
 	}
 	return;
-
 } 
-
 void construct() {
 	for (int i=1;i<=n;i++) {
 		tree[i]=ar[i];
@@ -102,13 +94,10 @@ void construct2() {
 		int p=i+(i&(-i));
 		if (p<=100000) tree2[p]+=tree2[i];
 	}
-
-
 	return;
 }
 int main() {
 	boost;
-
 	ll a,b,m;
 	cin >> n >> m;
 	for (int i=1;i<=n;i++) {
@@ -129,7 +118,6 @@ int main() {
 			update2(b,1);
 			update(a,b-ar[a]);
 			ar[a]=b;
-
 		}
 		else if (c=='S') {
 			cin >> a >> b;
@@ -140,11 +128,7 @@ int main() {
 			cout << add2(a) << "\n";
 				
 		}
-
-
 	}
-
-
-
 	return 0;
 }
+

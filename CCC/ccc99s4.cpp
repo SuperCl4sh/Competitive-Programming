@@ -76,7 +76,6 @@ void Solve() {
 			moves=i;
 		}
 		
-
 	}
 	if (stalemate) {
 		printf("Stalemate in %i knight move(s).\n",moves);
@@ -95,6 +94,6 @@ int main() {
 		Sx=r-Sx;sx=r-sx;Sy--,sy--;
 		Solve();
 	}
-
 	return 0;
 }
+

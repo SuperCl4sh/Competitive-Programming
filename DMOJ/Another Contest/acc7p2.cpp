@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/acc7p2
 #include <bits/stdc++.h>
-
 using namespace std;
 int n;
 void Print(int ar[]) {
@@ -11,7 +10,6 @@ void Print(int ar[]) {
 	}
 	return;
 }
-
 int main() {
 	ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 	srand(time(NULL));
@@ -24,11 +22,8 @@ int main() {
 		if (!a) break;
 		--a;
 		swap(ar[a],ar[rand()%n]);
-
-
 		
 	}
-
-
 	return 0;
 }
+

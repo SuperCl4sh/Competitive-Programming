@@ -46,8 +46,6 @@ void bfs(int a,int b) {
 	}
 	printf("No\n");
 	return;
-
-
 }
  int main() {
     boost;
@@ -64,3 +62,4 @@ void bfs(int a,int b) {
     }
     return 0;
  }
+

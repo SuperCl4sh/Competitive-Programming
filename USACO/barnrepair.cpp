@@ -3,9 +3,7 @@ ID:
 TASK: barn1 
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -46,7 +44,6 @@ const ll high= (ll)(1e15);
 const ll MOD2 = 998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int main() {
     boost;
     int a,m,s,c;
@@ -69,6 +66,6 @@ int main() {
     ans-=ar[0]-1;
     ans-=s-ar[sz(ar)-1];
     fout << ans << "\n";
-
     return 0;
 }
+

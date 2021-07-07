@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ioi95p2
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -42,13 +41,10 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 vt<vt<pll>>deals;
 ll price[105],price2[105],ar[5],dp[6][6][6][6][6];
 vt<pll>arr;
-
 int check(int a) {
 	int start=0;
 	while (start<5) {
@@ -59,7 +55,6 @@ int check(int a) {
 	assert(0);
 	return 1;
 }
-
 ll solve (int a, int b, int c,int d, int e) {
 	if (a<0||b<0||c<0||d<0||e<0) return INF;
 	else if (a==0&&b==0&&c==0&&d==0&&e==0) return 0;
@@ -78,7 +73,6 @@ ll solve (int a, int b, int c,int d, int e) {
 		}
 		ret=min(ret,solve(a,b,c,d,e)+price[i]);
 		a=A,b=B,c=C,d=D,e=E;
-
 	}
 	ll res=INF;
 	FOR (j,0,sz(arr)) {
@@ -98,11 +92,9 @@ ll solve (int a, int b, int c,int d, int e) {
 		else res=solve(a,b,c,d,e-1);
 		ret=min(ret,res+arr[j].S);
 	}
-
 	
 	return dp[a][b][c][d][e]=ret;
 }
-
 int main() {
 	boost;
 	mem(ar,-1);
@@ -130,8 +122,6 @@ int main() {
 		target[ind]+=c;
 	}
 	cout << solve(target[0],target[1],target[2],target[3],target[4]) << "\n";
-
-
-
 	return 0;
 }
+

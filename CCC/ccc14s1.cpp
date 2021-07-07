@@ -4,8 +4,6 @@
 using namespace std;
 typedef long long ll;
 typedef string str;
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     ll t,k,n,j=0;
@@ -17,7 +15,6 @@ typedef string str;
     cin >> t;
     while (t--) {
         cin >> n;
-
         j=1;
         if (n<=ar.size()) {
         for (ll p=0;p<ar.size();p++) {
@@ -36,11 +33,9 @@ typedef string str;
             }
         }
     }
-
     for (ll x=0;x<ar.size();x++) {
         cout << ar[x] << endl;
     }
-
-
     return 0;
  }
+

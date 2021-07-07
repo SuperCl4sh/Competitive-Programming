@@ -17,7 +17,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     ll n;str s,alpha="abcdefghijklmnopqrstuvwxyz",upperAlpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -39,9 +38,7 @@ typedef pair<str,str>pss;
             ind-=n;
             if (ind>0) ind%=26;
             while (ind<0) ind+=26;
-
             cout << upperAlpha[ind];
-
         }
         else {
             for (int j=0;j<alpha.length();j++) {
@@ -57,6 +54,6 @@ typedef pair<str,str>pss;
         }
     }
     cout << endl;
-
     return 0;
  }
+

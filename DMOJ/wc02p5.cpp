@@ -38,11 +38,9 @@ int main() {
                 arr.push_back(8);
             }
         }
-
         while (corrections>0) {
                 corrections=0;
         for (int f=1;f<arr.size();f++) {
-
             if (arr[f]-arr[f-1]==4){
                 corrections++;
                 arr.erase(arr.begin()+(f-1));
@@ -62,3 +60,4 @@ int main() {
     }
     return 0;
 }
+

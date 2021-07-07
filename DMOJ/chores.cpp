@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/chores
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -49,10 +48,8 @@ struct sortBySecond {
 		return a.F<b.F;
 	}
 };
-
 int main() {
     boost;
-
     int n;ll a,b;
     cin >> n;
     vector<pll>ar;
@@ -72,6 +69,6 @@ int main() {
 	curr%=MOD;
     }
     cout << ans << "\n";
-
     return 0;
 }
+

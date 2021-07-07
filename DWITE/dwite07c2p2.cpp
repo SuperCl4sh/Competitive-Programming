@@ -7,8 +7,6 @@ typedef pair<int,int> pii;
 typedef pair<ll,ll>pll;
 typedef long double ld;
 typedef unsigned long long ull;
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int tot=0;str s;
@@ -31,6 +29,6 @@ typedef unsigned long long ull;
         }
         }
     }
-
     return 0;
  }
+

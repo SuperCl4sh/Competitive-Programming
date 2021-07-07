@@ -3,7 +3,6 @@ ID:
 TASK: cowtour
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 using namespace std;
 ofstream fout ("cowtour.out");
@@ -49,7 +48,6 @@ ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 int n,id=0,adj[155][155];ld dist[155][155],bad=10000000.0;bool visited[155];
 vector<vi>ids(155);
-
 void dfs(int node) {
 	if (visited[node]) return;
 	visited[node]=1;
@@ -59,7 +57,6 @@ void dfs(int node) {
 	}
 	return;
 }
-
 int main() {
 	boost;
 	fin >> n;
@@ -118,7 +115,6 @@ int main() {
 		}
 	}
 	fout << sp(6) << max(ans,ans2) << "\n";
-
 	return 0;
 }
 //tfw you incorrectly implement an algorithm and spend hours debugging D:

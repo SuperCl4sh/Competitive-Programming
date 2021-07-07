@@ -27,3 +27,4 @@ solve (ar,m);
 cout << counter << endl;
 return 0;
 }
+

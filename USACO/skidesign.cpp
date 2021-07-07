@@ -3,9 +3,7 @@ ID:
 TASK: skidesign
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -48,14 +46,12 @@ const ll high= (ll)(1e15);
 const ll MOD2 = 998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int main() {
     boost;
     int n;
     fin >> n;
     int ar[n];
     for (int i=0;i<n;i++) fin >> ar[i];
-
     int ans=INT_MAX,curr=0;
     for (int i=0;i<=83;i++) {
 	    curr=0;
@@ -71,6 +67,6 @@ int main() {
 	ans=min(ans,curr);
     }
     fout << ans << "\n";
-
     return 0;
 }
+

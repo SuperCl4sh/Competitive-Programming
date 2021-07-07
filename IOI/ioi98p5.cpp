@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ioi98p5
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -50,7 +49,6 @@ clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 vt<pii>knights;
 int dp[9][9][9][9],convert[9]={-1,8,7,6,5,4,3,2,1};bool visited[9][9];
-
 void init() {
 	FOR (i,0,9,1) 
 		FOR (j,0,9,1)
@@ -81,7 +79,6 @@ void init() {
 	}
 	return;
 }
-
 int main() {
 	boost;
 	str s;
@@ -109,8 +106,6 @@ int main() {
 		}
 	}
 	cout << ans << "\n";
-
-
-
 	return 0;
 }
+

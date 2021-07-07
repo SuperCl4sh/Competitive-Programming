@@ -32,8 +32,6 @@ if (total-o>=0) {
     solve(total-o,P,G,R,O+1);
 }
 return;
-
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -47,3 +45,4 @@ return;
     printf("Minimum number of tickets to print is %i.\n",small);
     return 0;
  }
+

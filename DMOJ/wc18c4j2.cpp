@@ -22,7 +22,6 @@ typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
-
  int main() {
     boost;
     int a,n,tot=0,curr=50;
@@ -36,3 +35,4 @@ char _;
     cout << tot << "\n";
     return 0;
  }
+

@@ -3,7 +3,6 @@
 using namespace std;
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-
 int n,p,r,i=1,total ;
 cin >> p >> n >> r;
 if (p==0) {
@@ -32,7 +31,6 @@ while (true) {
     }
     i++;
 }
-
-
 return 0;
 }
+

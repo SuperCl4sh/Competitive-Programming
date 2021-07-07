@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ccc15j3
 #include <bits/stdc++.h>
-
 using namespace std;
 string ans = "";
 int ar[5],f=0;
@@ -22,7 +21,6 @@ for (int i=0;i<s.length();++i) {
             if (ar[j]<lowest) {
                 lowest=ar[j];
                 letter=vowels[j];
-
             }
         }
         f=0;
@@ -40,7 +38,6 @@ for (int i=0;i<s.length();++i) {
             }
             ans+=alpha[f];
         }
-
     }
 }
 return;
@@ -51,6 +48,6 @@ string a;
 cin >> a;
 solve(a);
 cout << ans << endl;
-
 return 0;
 }
+

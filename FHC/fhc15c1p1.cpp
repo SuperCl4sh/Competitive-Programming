@@ -63,7 +63,6 @@ void construct() {
 		if (sqrt(i)==(int)(sqrt(i))) --curr;
 		dp[i]=curr;
 	}
-
 	return;
 }*/
 void Solve() {
@@ -74,8 +73,6 @@ void Solve() {
 		if (dp[i]==k) ++ans;
 	}
 	cout << ans << "\n";
-
-
 	return;
 }
 int main() {
@@ -89,5 +86,5 @@ int main() {
 	++i;
     }
     return 0;
-
 }
+

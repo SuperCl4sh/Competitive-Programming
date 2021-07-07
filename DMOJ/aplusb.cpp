@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/aplusb
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
     int t,a,b;
     cin >> t;
@@ -16,3 +14,4 @@ int main() {
     
     return 0;
 }
+

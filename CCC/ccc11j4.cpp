@@ -76,7 +76,6 @@ void initialize() {
 		visited[x][y]=1;
 		--x;
 	}
-
 	return;
 }
 int main() {
@@ -113,6 +112,6 @@ int main() {
 		}
 		cout << "\n";
 	}*/
-
 	return 0;
 }
+

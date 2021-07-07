@@ -3,9 +3,7 @@ ID:
 TASK: castle 
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -115,7 +113,6 @@ int main() {
 		}
 	}
 	
-
 	int ans2=0,x,y;char dir='E';
 	for (int j=0;j<m;j++) {
 		for (int i=n-1;i>=0;i--) {
@@ -144,7 +141,6 @@ int main() {
 		}
 	}
 	fout << num << "\n" << ans << "\n" << ans2 << "\n" << x+1 << " " <<y+1 << " " << dir << "\n";
-
 	return 0;
 }
 

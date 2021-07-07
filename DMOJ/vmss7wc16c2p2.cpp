@@ -22,7 +22,6 @@ typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
 const int MOD=1e9+7;
-
  int main() {
     boost;
     str s;
@@ -42,3 +41,4 @@ const int MOD=1e9+7;
     }
     return 0;
  }
+

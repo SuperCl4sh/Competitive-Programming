@@ -38,12 +38,9 @@ const ll high= (ll)(1e15);
 const ll MOD2=998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
 int gcd(int a, int b) {
-
 	if (b==0) return a;
 	else if (b>a) return gcd(b,a);
 	else return gcd(b,a%b);
-
-
 }
 void solve () {
 	int a,b,c,d;
@@ -69,3 +66,4 @@ int main() {
 	}	
 	return 0;
 }
+

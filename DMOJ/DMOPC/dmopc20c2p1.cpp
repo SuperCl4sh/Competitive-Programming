@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/dmopc20c2p1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,row=2000,col=0,startRow=-1,endRow=0,rowIncrease=0;string s;
@@ -30,7 +29,6 @@ using namespace std;
             col++;
         }
         col=min(col,n);
-
     }
     for (int v=0;v<5000;v++) {
         for (int j=0;j<n;j++) {
@@ -56,6 +54,6 @@ using namespace std;
         }
         cout << endl;
     }
-
     return 0;
  }
+

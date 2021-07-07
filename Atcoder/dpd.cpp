@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -50,7 +49,6 @@ int main() {
     }
     cout << dp[w] << "\n";
     return 0;
-
 }
 //note that normal recursion (without dp/memoizing) passes due to the weak test cases (DMOJ only)
 

@@ -45,7 +45,6 @@ while (a!=ar[a]) {
 	a=ar[a];
 }
 return a;
-
 }
 void Union(int a, int b) {
 aSiz=parent(a);
@@ -53,13 +52,11 @@ bSiz=parent(b);
 if (Size[aSiz]>Size[bSiz]) {
 	ar[aSiz]=ar[bSiz];
 	Size[bSiz]+=Size[aSiz];
-
 }
 else {
 	ar[bSiz]=ar[aSiz];
 	Size[aSiz]+=Size[bSiz];
 }
-
 return;
 }
 void construct() {
@@ -83,7 +80,6 @@ for (int i=0;i<sz(adj);i++) {
 }
 return;
 }
-
 int main() {
 	boost;	
 	int c,r,a,b,w;
@@ -102,3 +98,4 @@ int main() {
 	cout << ans << "\n";
 	return 0;
  }
+

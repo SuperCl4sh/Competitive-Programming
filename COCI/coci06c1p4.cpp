@@ -42,7 +42,6 @@ if (carryDist!=dist) {
             }
             }
         }
-
     }
     for (int v=0;v<grid.size();v++) {
         for (int d=0;d<grid[v].size();d++) {
@@ -52,7 +51,6 @@ if (carryDist!=dist) {
         }
     }
     carryDist=dist;
-
 }
 if (x>=r||y>=c||x<0||y<0||grid[x][y]=='X'||grid[x][y]=='*'||visited[x][y]) {
     continue;
@@ -87,6 +85,6 @@ return;
         ar.clear();
     }
     bfs();
-
     return 0;
  }
+

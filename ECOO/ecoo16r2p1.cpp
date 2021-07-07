@@ -40,9 +40,7 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll mm(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=mm(a,a,mod),b/=2) {if (b&1) ans=mm(ans,a,mod);}return ans;}
-
 ll P_Pow[1000005];
-
 void construct() {
 	P_Pow[1000004]=1;
 	for (int i=1000003;i>=0;i--) P_Pow[i]=(P_Pow[i+1]*26)%MOD;
@@ -54,18 +52,13 @@ int solve(str s) {
 		curr=ll(s[i]);
 		hash1=(hash1*prime+curr)%MOD;
 		hash2=((hash2+curr*P_Pow[1000004-i]%MOD))%MOD;
-
 		if (hash1==hash2) ret=i+1;
 	}
-
-
 	return ret;
 	
 }
-
 int main() {
 	boost;
-
 	str s;
 	construct();
 	FOR (_,0,10) {
@@ -75,11 +68,6 @@ int main() {
 		int res2=solve(s);
 		cout << sz(s)-max(res1,res2) << "\n";
 	}
-
-
-
 	return 0;
-
-
-
 }
+

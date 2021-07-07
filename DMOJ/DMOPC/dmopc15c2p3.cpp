@@ -50,3 +50,4 @@ while (tot<n) {
 printf("%lld\n",ans);
 	 return 0;
  }
+

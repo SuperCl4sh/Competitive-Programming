@@ -3,7 +3,6 @@ ID:
 TASK: zerosum
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
@@ -75,11 +74,9 @@ bool check(str s) {
 			else curr+=current;
 			
 		}
-
 	}
 	return curr==0;
 }
-
 void solve(str curr, int num) {
 	if (num==n+1) {
 		if (check(curr)) ans.insert(curr);
@@ -91,7 +88,6 @@ void solve(str curr, int num) {
 	solve(curr+"+"+convert[num],num+1);
 	return;
 }
-
 int main() {
 	boost;
 	fin >> n;
@@ -99,9 +95,6 @@ int main() {
 	for (auto it=ans.begin();it!=ans.end();++it) {
 		fout << *it << "\n";
 	}
-
-
-
 	return 0;
 }
 

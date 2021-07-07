@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/bf1easy
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
     int n;
     cin >> n;
@@ -12,3 +10,4 @@ int main() {
     }
     return 0;
 }
+

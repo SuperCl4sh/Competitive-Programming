@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ioi98p3
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -86,11 +85,8 @@ void solve(vector<bool>ar,int counter,int iteration) {
 		solve(ar,counter+1,iteration);
 	}
 	else return;
-
 	return;
-
 }
-
 int main() {
     boost;
     int a;
@@ -124,3 +120,4 @@ int main() {
     
     return 0;
 }
+

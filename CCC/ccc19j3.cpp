@@ -24,10 +24,6 @@ for (int i=1;i<s.length();i++) {
 if (tot>0) {
     cout << tot << " " << curr << endl;
 }
-
-
-
-
 return;
 }
  int main() {
@@ -38,6 +34,6 @@ return;
         cin >> s;
         solve(s);
     }
-
     return 0;
  }
+

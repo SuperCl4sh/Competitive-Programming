@@ -17,8 +17,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,x,tot=0;
@@ -38,3 +36,4 @@ typedef pair<str,str>pss;
     cout << tot << endl;
     return 0;
  }
+

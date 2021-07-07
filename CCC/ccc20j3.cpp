@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc20j3
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,a,b;string s,g;
@@ -29,3 +28,4 @@ using namespace std;
     cout << x[0]-1 << "," << y[0]-1 << "\n" << x[n-1]+1<<"," << y[n-1]+1 << endl;
     return 0;
  }
+

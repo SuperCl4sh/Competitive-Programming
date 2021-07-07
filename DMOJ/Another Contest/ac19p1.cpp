@@ -3,7 +3,6 @@
 #include <bits/stdc++.h>
 #include <vector>
 using namespace std;
-
 int main() {
     int t;long long n;long long a;long long b;long long c;
     cin >> t;
@@ -28,8 +27,7 @@ int main() {
             continue;
         }
         cout << n << " " << b << " " << c << endl;
-
     }
     return 0;
-
 }
+

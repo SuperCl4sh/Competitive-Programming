@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc14s2
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n;
@@ -25,10 +24,10 @@ using namespace std;
                     cout << "bad" << endl;
                     return 0;
                 }
-
             }
         }
     }
     cout << "good" << endl;
     return 0;
  }
+

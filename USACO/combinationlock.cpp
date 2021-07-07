@@ -3,9 +3,7 @@ ID:
 TASK: combo
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -103,9 +101,7 @@ bool Solve(int a, int b, int c) {
 		}
 	}
 	return broken;
-
 }
-
 int main() {
     boost;
     int n;
@@ -137,7 +133,6 @@ int main() {
 		if (good2[i][x]<=0) good2[i][x]+=n;
 		else if (good2[i][x]>n) {good2[i][x]-=n;}
 	}
-
     }
     int ans=0;
     for (int i=1;i<=n;i++) {
@@ -155,3 +150,4 @@ int main() {
     
     return 0;
 }
+

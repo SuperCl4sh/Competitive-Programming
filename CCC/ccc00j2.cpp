@@ -33,18 +33,13 @@ void solve (string curr) {
     if (stoi(curr)>=m) {
         return;
     }
-
     solve(curr+"0");
     solve(curr+"1");
     solve(curr+"6");
     solve(curr+"8");
     solve (curr+"9");
-
 return;
 }
-
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     cin >> n >> m;
@@ -56,3 +51,4 @@ return;
     cout << total << endl;
     return 0;
  }
+

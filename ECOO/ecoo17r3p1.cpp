@@ -6,8 +6,6 @@ typedef long long ll;
 typedef string str;
 typedef pair<int,int> pii;
 typedef pair<ll,ll>pll;
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a,f,d,tot=0,soldDay;
@@ -33,6 +31,6 @@ typedef pair<ll,ll>pll;
         }
         cout << tot << endl;
     }
-
     return 0;
  }
+

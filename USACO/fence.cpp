@@ -5,7 +5,6 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -46,9 +45,7 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 vt<vt<int>>adj(505);
 vt<int>res;
 void solve(int node) {
@@ -64,17 +61,13 @@ void solve(int node) {
 		i=-1;
 		solve(go);
 	}
-
 	res.pb(node);
 	return;
 }
-
 int main() {
 	boost;
-
 	freopen("fence.in","r",stdin);
 	freopen("fence.out","w",stdout);
-
 	int a,b,f;
 	cin >> f;
 	int start=1;
@@ -92,7 +85,7 @@ int main() {
 	solve(start);
 	reverse(all(res));
 	FOR (i,0,sz(res)) cout << res[i] << "\n";
-
 	
 	return 0;
 }
+

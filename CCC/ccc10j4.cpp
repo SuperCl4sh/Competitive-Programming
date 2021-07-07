@@ -47,7 +47,6 @@ bool solve() {
 		j%=curr.size();
 	}
 	return 1;
-
 }
 int main() {
 	boost;
@@ -71,7 +70,7 @@ int main() {
 			if (solve()) {ans=i+1;break;}
 		}
 		cout << ans << "\n";
-
 	}
 	return 0;
 }
+

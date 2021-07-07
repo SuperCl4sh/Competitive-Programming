@@ -50,3 +50,4 @@ int main() {
 	(!(dist&1))?printf("Y\n"):printf("N\n");
 	return 0;
 }
+

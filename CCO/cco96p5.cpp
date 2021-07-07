@@ -58,13 +58,8 @@ while (!pq.empty()) {
 	for (auto x: adj[node]) {
 		pq.P(mp(mp(sz(curr)+1,x),curr+alpha.substr(x,1)));
 	}
-
 }
-
 cout << curr << "\n";
-
-
-
 return;
 }
 int main() {
@@ -82,6 +77,6 @@ int main() {
 		last=b[0]-'A';
 		bfs(a.substr(0,1));
 	}
-
 	return 0;
 }
+
