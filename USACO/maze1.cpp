@@ -3,7 +3,6 @@ ID:
 TASK: maze1
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
@@ -69,13 +68,11 @@ void bfs(int r, int c) {
 			pq.P(mp(curr+1,mp(x+dx[i],y+dy[i])));
 		}
 	}
-
 	
 	
 	
 	return;
 }
-
 int main() {
 	boost;
 	FOR (i,0,305) {
@@ -114,8 +111,7 @@ int main() {
 		}
 	}
 	fout << ans << "\n";
-
-
 	return 0;
 }
 //tried BFSing for every space character and it TLEd ):
+

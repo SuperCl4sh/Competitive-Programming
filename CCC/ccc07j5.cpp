@@ -20,10 +20,9 @@ ll dp[100];
             if (motels[j]-motels[i]<=b&&motels[j]-motels[i]>=a) {
                 dp[j]+=dp[i];
             }
-
-
         }
     }
     cout << dp[motels.size()-1] << endl;
     return 0;
  }
+

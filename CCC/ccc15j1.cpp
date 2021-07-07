@@ -22,3 +22,4 @@ typedef unsigned long long ull;
     }
     return 0;
  }
+

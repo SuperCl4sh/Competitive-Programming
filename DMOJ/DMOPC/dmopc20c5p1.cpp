@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/dmopc20c5p1
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -48,7 +47,6 @@ void Time(clock_t start) {printf("Process took %lf seconds.\n",(clock()-start)/d
 int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1}; //:)
 clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 int main() {
 	boost;
 	str s,t;
@@ -59,7 +57,7 @@ int main() {
 		else ++ind1,++ind2;
 	}
 	ans=sz(s)-ind1+sz(t)-ind2;
-
 	cout << ans << "\n";
 	return 0;
 }
+

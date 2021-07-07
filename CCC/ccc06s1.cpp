@@ -38,11 +38,9 @@ for (int i=0;i<s.length();i++) {
         cout << "Not their baby!" << endl;
         return;
     }
-
 }
 cout << "Possible baby." << endl;
 return;
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -56,3 +54,4 @@ return;
     }
     return 0;
  }
+

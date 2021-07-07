@@ -3,10 +3,8 @@ ID:
 TASK: camelot
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -50,12 +48,9 @@ ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
 void Time(clock_t start) {printf("Process took %lf seconds.\n",(clock()-start)/double(CLOCKS_PER_SEC));return;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 int r,c,dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dp[31][27][31][27];bool visited[31][27];
 vt<pii>knights;
-
 void init() {
 	queue<pii>q;
 	mem(dp,0x3f3f3f);
@@ -80,10 +75,8 @@ void init() {
 			}
 		}
 	}
-
 	return;
 }
-
 int main() {
 	boost;
 	freopen("camelot.in","r",stdin);
@@ -137,11 +130,6 @@ int main() {
 	//Time(start);
 	
 	cout << ans << "\n";
-
-
-
-
-
-
 	return 0;
 }
+

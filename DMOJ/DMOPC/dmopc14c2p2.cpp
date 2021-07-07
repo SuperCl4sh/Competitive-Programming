@@ -12,7 +12,6 @@ for (int i=0;i<log.length();i++) {
             pieces.push_back(curr);
             tot++;
         }
-
         curr="";
     }
     else {
@@ -41,6 +40,6 @@ return;
     int n;string log;
     cin >> n >> log;
     solve(log);
-
     return 0;
  }
+

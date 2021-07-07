@@ -2,7 +2,6 @@
 #include <vector>
 #include <iostream>
 #include <bits/stdc++.h>
-
 using namespace std;
 int counter=0;
 void calc(int total, vector <int> arr,int i) {
@@ -20,7 +19,6 @@ void calc(int total, vector <int> arr,int i) {
 }
 int main () {
     int n;int target;int m=0;
-
     cin >> n >> target;
     vector <int> coins(n);
     vector <int> coinsCopy;
@@ -31,3 +29,4 @@ int main () {
     calc(target,coinsCopy,m);
     cout << counter << endl;
 }
+

@@ -3,9 +3,7 @@ ID:
 TASK: milk3
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -56,7 +54,6 @@ void solve(int A, int B, int C) {
 	if (visited[A][B][C]) return;
 	if (A==0) ans.insert(C);
 	visited[A][B][C]=1;
-
 	solve(A,B+min(b-B,C),C-min(b-B,C));
 	solve(A+min(a-A,C),B,C-min(a-A,C));
 	solve(A,B-min(c-C,B),C+min(B,c-C));
@@ -65,7 +62,6 @@ void solve(int A, int B, int C) {
 	solve(A-min(c-C,A),B,C+min(c-C,A));
 	return;
 }
-
 int main() {
     boost;
     fin >> a >> b >> c;
@@ -82,3 +78,4 @@ int main() {
     }
     return 0;
 }
+

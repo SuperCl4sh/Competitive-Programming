@@ -67,6 +67,6 @@ int main() {
 		else cout << "\n";
 	}
 	
-
 	return 0;
 }
+

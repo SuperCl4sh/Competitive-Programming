@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc15j4
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,b,time=0;char a;
@@ -30,10 +29,8 @@ using namespace std;
                 wait[b]=0;
                 rep[b]=1;
             }
-
         }
         time++;
-
     }
     for (int i=1;i<sizeof(totTime)/sizeof(totTime[0]);i++) {
         if (rep[i]==1) {
@@ -45,3 +42,4 @@ using namespace std;
     }
     return 0;
  }
+

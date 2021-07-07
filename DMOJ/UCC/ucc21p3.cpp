@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ucc21p3
 #include <bits/stdc++.h>
-
 using namespace std;
 long long diff[10000005];
 int main() {
@@ -23,3 +22,4 @@ int main() {
 	
 	return 0;
 }
+

@@ -18,7 +18,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
  int main() {
     boost;
     int n,tot=10;
@@ -30,6 +29,6 @@ typedef pair<str,str>pss;
     }
     sort(ar,ar+n,greater<int>());
     cout << tot+ar[0]+ar[1] << endl;
-
     return 0;
  }
+

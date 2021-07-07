@@ -31,7 +31,6 @@ int main() {
             else {
                 cout <<"   "<< i;
             }
-
         }
         else {
             if (a==1) {
@@ -40,10 +39,10 @@ int main() {
             else {
                 cout << "  " << i;
             }
-
         }
         a++;
     }
     cout << endl;
     return 0;
 }
+

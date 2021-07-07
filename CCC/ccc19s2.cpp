@@ -59,7 +59,7 @@ int main() {
 		l=2,r=2*a-2;
 		while (composite[r]||composite[l]) {--r,++l;}
 		cout << l << " " << r << "\n";
-
 	}
 	return 0;
 }
+

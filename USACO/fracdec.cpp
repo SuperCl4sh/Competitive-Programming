@@ -46,16 +46,13 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 int indices[1000005],counter=0;
-
 int calc(int n) {
 	if (n==0) return 1;
 	int ret=0;
 	while (n) ++ret,n/=10;
 	return ret;
 }
-
 void Print(str s) {
 	FOR (i,0,sz(s)) {
 		fout << s[i];
@@ -65,8 +62,6 @@ void Print(str s) {
 	if (counter) fout << "\n";
 	return;
 }
-
-
 int main() {
 	boost;
 	int n,d;
@@ -102,8 +97,8 @@ int main() {
 		Print(finalAns);
 	
 	}
-
 	
 	
 	return 0;
 }
+

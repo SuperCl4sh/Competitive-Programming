@@ -14,7 +14,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 vector<int>ar;
-
 str digit,ans;int currDig,ind;
 void solve (str s) {
 ar.clear();
@@ -54,8 +53,6 @@ while (ar.size()>2) {
             }
         }
     }
-
-
 }
 for (int i=0;i<ar.size();i++) {
     cout << ar[i];
@@ -71,7 +68,6 @@ else cout << "The number " + s +" is not divisible by 11." << endl;
 }
 return;
 }
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n;
@@ -84,3 +80,4 @@ return;
     }
     return 0;
  }
+

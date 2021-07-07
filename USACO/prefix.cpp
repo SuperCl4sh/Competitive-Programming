@@ -3,9 +3,7 @@ ID:
 TASK: prefix
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -51,17 +49,14 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 void Print(auto &temp) {for (auto x: temp) cout << x << " ";cout << "\n";return;}
-
 vector<str>possib;
 str s;
 ll ans=0;
 bool visited[200005],inQueue[200005];
 void solve() {
-
 	priority_queue<int>pq;
 	pq.P(0);
 	int curr=0;
-
 	while (!pq.empty()) {
 		curr=pq.top();
 		pq.pop();
@@ -74,10 +69,8 @@ void solve() {
 			if (possib[i]==s.substr(curr,sz(possib[i]))&&!visited[curr+sz(possib[i])]&&!inQueue[curr+sz(possib[i])]) {inQueue[curr]=1;pq.P(curr+sz(possib[i]));}
 		}
 	}
-
 	return;
 }
-
 int main() {
 	boost;
 	while (1) {

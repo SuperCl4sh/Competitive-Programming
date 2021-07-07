@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc00s1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int d,a,b,c,ans=0;
@@ -18,7 +17,6 @@ using namespace std;
             b++;
             d--;
             ans++;
-
         }
         if (b==100) {
             b=0;
@@ -37,3 +35,4 @@ using namespace std;
     cout << "Martha plays " <<ans<<" times before going broke."<<endl;
     return 0;
  }
+

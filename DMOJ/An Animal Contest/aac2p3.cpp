@@ -3,8 +3,6 @@
 using namespace std;
 //#pragma GCC target ("avx2") #pragma GCC optimization ("O3") #pragma GCC optimization ("unroll-loops")
 //^speed
-
-
 //typedefs
 typedef long long ll;
 typedef string str;
@@ -19,7 +17,6 @@ typedef pair<str,str>pss;
 typedef pair<char,char>pcc;
 typedef pair<long,long>pl;
 typedef pair<bool,bool>pbb;
-
 //defines
 #define mp make_pair
 #define pb push_back
@@ -50,12 +47,10 @@ typedef pair<bool,bool>pbb;
 #define gc getchar
 #define each(a,b) for (auto a: b)
 #define pc putchar
-
 //constants
 const ll MOD = 1000000007LL;
 const ll MOD2=998244353LL;
 const int INF=1<<30;
-
 //input
 template <typename T> void read(T& num) {
 	num=0;
@@ -65,13 +60,11 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
-
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
-
 }
 void read(ld &num) {
 	str s="";
@@ -87,7 +80,6 @@ void read(double &num) {
 void read(char &a) {
 	a=gc();
 }
-
 template<typename A, typename B> void read(pair<A,B> &a) {
 	read(a.F);
 	read(a.S);
@@ -95,19 +87,16 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 template <typename G> void read(vt<G>&ar) {
 	EACH(a,ar) 
 		read(a);
-
 }
 template <typename H, typename... Types> void read(H&  num, Types&... num1) {
 	read(num);
 	read(num1...);
 }
-
 //output
 void out(int n) {
 	if (n>9) out(n/10);
 	pc(char((n%10)+'0'));
 }
-
 void out(ll n) {
 	if (n>9) out(n/10LL);
 	pc(char((n%10)+'0'));
@@ -122,7 +111,6 @@ void out (ld a) {
 	str s=to_string(a);
 	out(s);
 }
-
 void out(double a) {
 	str s=to_string(a);
 	out(s);
@@ -133,7 +121,6 @@ void out (const char *s) {
 		out(s[i]);
 	}
 }
-
 template<typename T,typename M> void out(pair<T,M>a) {
 	out(a.F);
 	pc(' ');
@@ -143,10 +130,8 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
-
 	}
 }
-
 template <typename h, typename... types> void out(h s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) pc(' ');
@@ -157,7 +142,6 @@ template<typename v, typename... others> void write(v s, others... s1) {
 	out(s);
 	write(s1...);
 }
-
 template<typename T=ll,typename M=ll, typename S=ll> ll modmul(T a, M b, S m) {
 	ll ans=a*b-m*ll(1.L/m*a*b);
 	return ans+m*(ans<0)-m*(ans>=m);
@@ -187,13 +171,10 @@ clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 vt<str>grid;
 int n,m,psa[1505][1505];bool visited[1505][1505];
-
 void init() {
 	mem(psa,0);
-
 	rep (i,1,m+1) psa[1][i]=(grid[0][i-1]=='X')+psa[1][i-1];
         rep (i,1,n+1) psa[i][1]=(grid[i-1][0]=='X')+psa[i-1][1];	
-
 	rep (i,2,n+1) {
 		rep (j,2,m+1) {
 			psa[i][j]=psa[i-1][j]+psa[i][j-1]-psa[i-1][j-1]+(grid[i-1][j-1]=='X');
@@ -201,7 +182,6 @@ void init() {
 	}
 	rtn;
 }
-
 bool possib(int x) {
 	mem(visited,0);
 	queue<pair<pii,pii>>q;
@@ -224,10 +204,8 @@ bool possib(int x) {
 	rtn 0;
 	
 }
-
 int main() {
 	boost;
-
 	read(n);read(m);
 	str s;
 	rep (i,0,n) {
@@ -235,9 +213,7 @@ int main() {
 		grid.pb(s);
 	}
 	init();
-
 	int left=0,right=1,mid;	
-
 	rep (i,0,min(m,n)) {
 		if (grid[0][i]=='X'||grid[i][0]=='X') break;
 		++right;
@@ -248,7 +224,6 @@ int main() {
 		else right=mid;
 	}
 	out(left,'\n');
-
-
 	rtn 0;
 }
+

@@ -78,9 +78,6 @@ void construct() {
 	else {
 		cout << "Disconnected Graph\n";
 	}
-
-
-
 	return;
 }
 int main() {
@@ -96,5 +93,5 @@ int main() {
     }
     construct();
     return 0;
-
 }
+

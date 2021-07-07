@@ -46,6 +46,6 @@ using namespace std;
         }
     }
     cout << "random" << endl;
-
     return 0;
  }
+

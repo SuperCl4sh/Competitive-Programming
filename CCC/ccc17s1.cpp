@@ -3,7 +3,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-
 int main() {
     int n;int tot1=0;int tot2=0;int day=0;
     cin >> n;
@@ -22,5 +21,5 @@ int main() {
     }
     cout << day << endl;
     return 0;
-
 }
+

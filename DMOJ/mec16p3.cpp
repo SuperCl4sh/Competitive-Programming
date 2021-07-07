@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/mec16p3
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -74,9 +73,6 @@ int main() {
 		curr.clear();
 	}
 	cout << solve(0,0,0) << "\n";
-
-
-
-
 	return 0;
 }
+

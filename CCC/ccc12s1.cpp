@@ -28,3 +28,4 @@ typedef pair<str,str>pss;
     cout << tot << endl;
     return 0;
  }
+

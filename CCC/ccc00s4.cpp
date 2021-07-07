@@ -31,7 +31,6 @@ ll dp[5500];
     for (int i=0;i<n;i++) {
         cin >> clubs[i];
     }
-
     for (int i=0;i<sizeof(dp)/sizeof(dp[0]);i++) {
         dp[i]=INT_MAX;
     }
@@ -51,3 +50,4 @@ ll dp[5500];
     }
     return 0;
  }
+

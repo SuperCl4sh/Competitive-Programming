@@ -5,7 +5,6 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -45,19 +44,14 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 ll n,l,I,dp[35][35];
-
 void Print(ll ind, ll used,ll k) {
 	if (ind==n+1) return;
 	
 	ll val=0;
 	FOR (i,0,used+1) val+=dp[n-ind][i];
-
 	//cout << k << "\n";
-
 	if (val<k&&used>0) {
 		cout << 1;
 		Print(ind+1,used-1,k-val);
@@ -68,7 +62,6 @@ void Print(ll ind, ll used,ll k) {
 	}
 	return;
 }
-
 int main() {
 	boost;
 	freopen("kimbits.out","w",stdout);
@@ -82,8 +75,6 @@ int main() {
 	}
 	Print(1,l,I);
 	cout << "\n";
-
-
-
 	return 0;
 }
+

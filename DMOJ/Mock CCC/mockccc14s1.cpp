@@ -17,8 +17,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     str a,b,curr,g;
@@ -26,7 +24,6 @@ typedef pair<str,str>pss;
     getline(cin,b);
     reverse(b.begin(),b.end());
     int ind=-1;
-
     for (int i=0;i<a.length();i++) {
         curr=a.substr(i,b.length());
         if (!curr.compare(b)) ind=i;
@@ -35,3 +32,4 @@ typedef pair<str,str>pss;
     else cout << ind+b.length() << endl;
     return 0;
  }
+

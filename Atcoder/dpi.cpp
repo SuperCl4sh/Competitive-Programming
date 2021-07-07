@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -61,6 +60,5 @@ int main() {
     for (int i=0;i<n;i++) cin >> ar[i];
     cout << sp(10) << solve(0,0) << "\n";
     return 0;
-
 }
 

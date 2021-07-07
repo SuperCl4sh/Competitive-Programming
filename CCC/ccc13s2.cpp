@@ -65,5 +65,5 @@ int main() {
     }
     printf("%i\n",ans);
     return 0;
-
 }
+

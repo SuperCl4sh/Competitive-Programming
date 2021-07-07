@@ -58,3 +58,4 @@ int main() {
 	printf("%i\n",min(n,counter));
 	return 0;
 }
+

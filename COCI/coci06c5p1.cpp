@@ -33,8 +33,6 @@ for (int i=0;i<s.length();i++) {
     }
 }
 cout << index << endl;
-
-
 return;
 }
  int main() {
@@ -43,3 +41,4 @@ return;
     solve();
     return 0;
  }
+

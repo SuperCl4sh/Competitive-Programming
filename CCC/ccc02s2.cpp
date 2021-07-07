@@ -1,10 +1,8 @@
 //https://dmoj.ca/problem/ccc02s2
 #include <iostream>
 #include <bits/stdc++.h>
-
 using namespace std;
 int main() {
-
     int numerator;int denominator;
     cin >> numerator >> denominator;
     int num=numerator/denominator;
@@ -27,3 +25,4 @@ int main() {
     cout << endl;
     return 0;
 }
+

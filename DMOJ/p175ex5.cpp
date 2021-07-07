@@ -33,7 +33,6 @@ for (int i=1;i<n;i++) {
 ans="yes";
 return;
 }
-
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 int t,r,c,a,d;
@@ -61,3 +60,4 @@ while (t--) {
 }
 return 0;
 }
+

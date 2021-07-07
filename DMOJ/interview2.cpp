@@ -22,7 +22,6 @@ typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
-
  int main() {
     boost;
     int n;
@@ -54,11 +53,10 @@ char _;
                         found.pb(ans);
                     }
                 }
-
             }
     }
     }
-
     (found.size()==0)?cout<<-1<<"\n":cout<<found.size()<<"\n";
     return 0;
  }
+

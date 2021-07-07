@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 void solve (string s) {
-
 if (s[0]=='p' && s[1]=='q' || s[0]=='q' && s[1]=='p') {
     cout << "Mirrored pair" << endl;
 }
@@ -13,8 +12,6 @@ else {
     cout << "Ordinary pair" << endl;
 }
 return;
-
-
 }
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -27,3 +24,4 @@ return;
     }
     return 0;
  }
+

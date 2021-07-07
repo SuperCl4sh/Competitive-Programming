@@ -11,7 +11,6 @@ for (int i=2;i<=317;i++) {
         while (j<=100100) {
             sieve[j]=1;
             j+=i;
-
         }
     }
 }
@@ -29,3 +28,4 @@ return;
     cout << tot << endl;
     return 0;
  }
+

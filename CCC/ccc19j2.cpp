@@ -3,7 +3,6 @@
 #include <bits/stdc++.h>
 typedef long long ll;
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a,l;char b;
@@ -16,5 +15,5 @@ using namespace std;
         cout << endl;
     }
     return 0;
-
  }
+

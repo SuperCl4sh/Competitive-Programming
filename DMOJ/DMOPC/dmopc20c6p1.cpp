@@ -1,15 +1,12 @@
 //https://dmoj.ca/problem/dmopc20c6p1
 #include <bits/stdc++.h>
 using namespace std;
-
 /*
 #pragma GCC target ("avx2") 
 #pragma GCC optimization ("O3")
 #pragma GCC optimization ("unroll-loops")
 */
 //^speed
-
-
 //typedefs
 typedef long long ll;
 typedef string str;
@@ -21,7 +18,6 @@ typedef pair<double,double>pdd;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
 //defines
 #define mp make_pair
 #define pb push_back
@@ -52,7 +48,6 @@ typedef pair<str,str>pss;
 #define rando(a,b) rand()%(b-a)+a
 #define pc putchar
 #define gc getchar
-
 //input
 template <typename T> void read(T& num) {
 	num=0;
@@ -62,13 +57,11 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
-
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
-
 }
 void read(ld &num) {
 	str s="";
@@ -84,7 +77,6 @@ void read(double &num) {
 void read(char &a) {
 	a=gc();
 }
-
 template<typename A, typename B> void read(pair<A,B> &a) {
 	read(a.F);
 	read(a.S);
@@ -92,13 +84,11 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 template <typename G> void read(vt<G>&ar) {
 	EACH(a,ar) 
 		read(a);
-
 }
 template <typename H, typename... Types> void read(H&  num, Types&... num1) {
 	read(num);
 	read(num1...);
 }
-
 //output
 void out(int n) {
 	if (n<0) {
@@ -110,7 +100,6 @@ void out(int n) {
 	else if (n>9) out(n/10);
 	pc(char((n%10)+'0'));
 }
-
 void out(ll n) {
 	if (n<0) {
 		pc('-');
@@ -131,7 +120,6 @@ void out (ld a) {
 	str s=to_string(a);
 	out(s);
 }
-
 void out(double a) {
 	str s=to_string(a);
 	out(s);
@@ -142,7 +130,6 @@ void out (const char *s) {
 		out(s[i]);
 	}
 }
-
 template<typename T,typename M> void out(pair<T,M>a) {
 	out(a.F);
 	pc(' ');
@@ -152,10 +139,8 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
-
 	}
 }
-
 template <typename h, typename... types> void out(h s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) pc(' ');
@@ -175,7 +160,6 @@ template<typename v> void writeln(v s) {
 	out(s);
 	pc('\n');
 }
-
 template<typename v, typename... others> void outln(v s, others... s1) {
 	out(s);
 	out(' ');
@@ -186,7 +170,6 @@ template<typename v> void outln(v s) {
 	out(s);
 	pc('\n');
 }
-
 template <typename T,typename S> ll Pow(T a, S b) {
 	ll ret=1;
 	while (b) {
@@ -209,23 +192,17 @@ const ll MOD = 1000000007LL;
 const ll MOD2=998244353LL;
 const int INF=1<<30;
 const int mxN=(int)(1e6);
-
-
 int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 clock_t start;
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 vt<ll>ar(1);
 vt<ll>psa(2*mxN+5);
 int n;
-
 ll calc(int l, int r) {
 	rtn psa[r]-psa[l-1];
 }
-
 int main() {
 	boost;
-
 	read(n);
 	vt<ll>arr(n+1);
 	ll total=0;
@@ -242,7 +219,6 @@ int main() {
 	}
 	psa[0]=0;
 	rep (i,1,sz(ar)) psa[i]=psa[i-1]+ar[i]; 
-
 	rep (i,1,n+1) {
 		int endOfRange=i+n,left=i,right=endOfRange,mid;ll ans=INT_MAX;
 		while (right-left>1) {
@@ -257,8 +233,7 @@ int main() {
 		else out(' ');	
 			
 	}
-
-
 	
 	rtn 0;
 }
+

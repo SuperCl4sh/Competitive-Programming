@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ccc21j4
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -66,9 +65,8 @@ int main() {
     }
     //cout << lCountInS << "\n";
 	cout << mCountInL+sCountInL+max(mCountInS,sCountInM) << "\n";    
-
-
     
     
     return 0;
 }
+

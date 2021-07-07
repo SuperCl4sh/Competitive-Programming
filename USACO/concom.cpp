@@ -3,7 +3,6 @@ ID:
 TASK: concom
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
@@ -50,9 +49,7 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 bool change=1,changed[105][105],visited[105],own[105][105],seen[105],done[105][105];int curr=0,adj[105][105],compare,start=0;
-
 void dfs(int node) {
 	if (visited[node]||curr>50) return;
 	visited[node]=1;
@@ -73,7 +70,6 @@ void update(int node) {
 	}
 	return;
 }
-
 int main() {
 	boost;
 	int a,b,c,n;

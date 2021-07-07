@@ -22,7 +22,6 @@ typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
 const int MOD=1e9+7;
-
 int n,ans=INT_MIN;
 vector<int>total(1);
 vector<vector<int>>adj(400050);
@@ -50,3 +49,4 @@ return tot;
     cout << ans << "\n";
     return 0;
  }
+

@@ -8,8 +8,6 @@ using namespace std;
 #pragma GCC target("avx,avx2,fma")
 #pragma GCC optimization ("unroll-loops")
 //^speed
-
-
 //typedefs
 typedef long long ll;
 typedef string str;
@@ -24,7 +22,6 @@ typedef pair<str,str>pss;
 typedef pair<char,char>pcc;
 typedef pair<long,long>pl;
 typedef pair<bool,bool>pbb;
-
 //defines
 #define mp make_pair
 #define pb push_back
@@ -55,13 +52,11 @@ typedef pair<bool,bool>pbb;
 #define gc getchar
 #define each(a,b) for (auto a: b)
 #define pc putchar
-
 //constants
 const ll MOD = 1000000007LL;
 const ll MOD2=998244353LL;
 const int INF=1<<30;
 const int mxN=(int)(1e5);
-
 //input
 template <typename T> void read(T& num) {
 	num=0;
@@ -71,13 +66,11 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
-
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
-
 }
 void read(ld &num) {
 	str s="";
@@ -93,7 +86,6 @@ void read(double &num) {
 void read(char &a) {
 	a=gc();
 }
-
 template<typename A, typename B> void read(pair<A,B> &a) {
 	read(a.F);
 	read(a.S);
@@ -101,19 +93,16 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 template <typename G> void read(vt<G>&ar) {
 	EACH(a,ar) 
 		read(a);
-
 }
 template <typename H, typename... Types> void read(H&  num, Types&... num1) {
 	read(num);
 	read(num1...);
 }
-
 //output
 void out(int n) {
 	if (n>9) out(n/10);
 	pc(char((n%10)+'0'));
 }
-
 void out(ll n) {
 	if (n>9) out(n/10LL);
 	pc(char((n%10)+'0'));
@@ -128,7 +117,6 @@ void out (ld a) {
 	str s=to_string(a);
 	out(s);
 }
-
 void out(double a) {
 	str s=to_string(a);
 	out(s);
@@ -139,7 +127,6 @@ void out (const char *s) {
 		out(s[i]);
 	}
 }
-
 template<typename T,typename M> void out(pair<T,M>a) {
 	out(a.F);
 	pc(' ');
@@ -149,10 +136,8 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
-
 	}
 }
-
 template <typename h, typename... types> void out(h s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) pc(' ');
@@ -163,7 +148,6 @@ template<typename v, typename... others> void write(v s, others... s1) {
 	out(s);
 	write(s1...);
 }
-
 template <typename T,typename S> ll Pow(T a, S b) {
 	ll ret=1;
 	while (b) {
@@ -181,23 +165,18 @@ template <typename T=ll, typename S, typename M> T Pow(T a, S b, M mod) {
 template <typename A, typename B> A rando(A a, B b) { 
 	return rand()%(b-a)+a;
 }
-
 void Time(clock_t start) {
 	write("Process took ",(clock()-start)/double(CLOCKS_PER_SEC)," seconds.\n");
 }
-
-
 int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 int main() {
-
 	int n,highest=0,lowest=INT_MAX,highest2=0,lowest2=INT_MAX;
 	read(n);
 	vt<int>ar(n+1),ar2(n+1);
 	rep (i,1,n+1) read(ar[i]),highest=max(ar[i],highest),lowest=min(ar[i],lowest);
 	rep (i,1,n+1) read(ar2[i]),highest2=max(ar2[i],highest2),lowest2=min(ar2[i],lowest2);
-
 	vt<int>rowHigh(n+1),rowLow(n+1),colHigh(n+1),colLow(n+1);
 	rep (i,1,n+1) {
 		rowHigh[i]=max(highest,ar2[i]);
@@ -223,9 +202,6 @@ int main() {
 		}
 		out('\n');
 	}
-
-
-
-
 	rtn 0;
 }
+

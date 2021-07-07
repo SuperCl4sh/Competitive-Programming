@@ -53,7 +53,6 @@ void sieve() {
 	
 	}
 return;
-
 }
  int main() {
 	 boost;
@@ -67,3 +66,4 @@ cout << "\n";
 	 
 return 0;
  }
+

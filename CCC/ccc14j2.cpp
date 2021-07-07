@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc14j2
 #include <cstdio>
 using namespace std;
-
  int main() {
     //ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a,tot=0;char ar[15];
@@ -20,3 +19,4 @@ using namespace std;
     }
     return 0;
  }
+

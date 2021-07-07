@@ -24,7 +24,6 @@ typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
-
  int main() {
     boost;
     str s;
@@ -55,6 +54,6 @@ char _;
                 else tot+=stoi(g)*sign;
     }
     cout << tot << "\n";
-
     return 0;
  }
+

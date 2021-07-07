@@ -7,7 +7,6 @@ typedef pair<int,int> pii;
 typedef pair<ll,ll>pll;
 typedef long double ld;
 typedef unsigned long long ull;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     str s,ans,alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -18,7 +17,6 @@ typedef unsigned long long ull;
         vector<int>freq(26);
         for (int f=0;f<s.length();f++) {
             if (isalpha(s[f])) {
-
                 freq[int(toupper((s[f])))-'A']++;
             }
         }
@@ -35,9 +33,8 @@ typedef unsigned long long ull;
             cout << ans[f];
         }
         }
-
         cout << endl;
-
     }
     return 0;
  }
+

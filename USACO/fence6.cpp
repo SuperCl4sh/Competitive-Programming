@@ -5,14 +5,12 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 /*
 #pragma GCC target ("avx2")
 #pragma GCC optimization ("O3")
 #pragma GCC optimization ("unroll-loops")
 */
 //^speed
-
 //typedefs
 typedef long long ll;
 typedef string str;
@@ -24,7 +22,6 @@ typedef pair<double,double>pdd;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
 //defines
 #define mp make_pair
 #define pb push_back
@@ -55,7 +52,6 @@ typedef pair<str,str>pss;
 #define rando(a,b) rand()%(b-a)+a
 #define pc putchar
 #define gc getchar
-
 //input
 template <typename T> void read(T& num) {
 	num=0;
@@ -66,13 +62,11 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
-
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
-
 }
 void read(ld &num) {
 	str s="";
@@ -95,7 +89,6 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 template <typename G> void read(vt<G>&ar) {
 	EACH(a,ar) 
 		read(a);
-
 }
 template <typename H, typename... Types> void read(H&  num, Types&... num1) {
 	read(num);
@@ -112,7 +105,6 @@ void out(int n) {
 	else if (n>9) out(n/10);
 	pc(char((n%10)+'0'));
 }
-
 void out(ll n) {
 	if (n<0) {
 		pc('-');
@@ -133,7 +125,6 @@ void out (ld a) {
 	str s=to_string(a);
 	out(s);
 }
-
 void out(double a) {
 	str s=to_string(a);
 	out(s);
@@ -144,7 +135,6 @@ void out (const char *s) {
 		out(s[i]);
 	}
 }
-
 template<typename T,typename M> void out(pair<T,M>a) {
 	out(a.F);
 	pc(' ');
@@ -154,10 +144,8 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
-
 	}
 }
-
 template <typename h, typename... types> void out(h s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) pc(' ');
@@ -177,7 +165,6 @@ template<typename v> void writeln(v s) {
 	out(s);
 	pc('\n');
 }
-
 template<typename v, typename... others> void outln(v s, others... s1) {
 	out(s);
 	out(' ');
@@ -188,7 +175,6 @@ template<typename v> void outln(v s) {
 	out(s);
 	pc('\n');
 }
-
 template <typename T,typename S> ll Pow(T a, S b) {
 	ll ret=1;
 	while (b) {
@@ -196,7 +182,6 @@ template <typename T,typename S> ll Pow(T a, S b) {
 	}
 	rtn ret;
 }
-
 template <typename T, typename S, typename M> T Pow(T a, S b, M mod) {
 	ll ret=1;
 	while (b) {
@@ -207,13 +192,10 @@ template <typename T, typename S, typename M> T Pow(T a, S b, M mod) {
 void Time(clock_t start) {
 	writeln("Process took ",(clock()-start)/double(CLOCKS_PER_SEC)," seconds.");
 }
-
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1};
 const int dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
-
 clock_t start;
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 struct fence {
 	vt<int>start,stop;
@@ -222,12 +204,10 @@ bool used[105];int ans=INT_MAX;
 vt<fence>fences(105);
 vt<int>fenceWeights(105);
 vt<int>initialAdj;
-
 bool Find(int target, vt<int>haystackAdj) {
 	each (a,haystackAdj) if (a==target) rtn 1;
 	rtn 0;
 }
-
 void dfs(int currFence,int prevFence,int currTot) {
 	vt<int>currAdj=(Find(prevFence,fences[currFence].start))?fences[currFence].stop:fences[currFence].start;
 	if (currAdj==initialAdj||currTot>=ans) {
@@ -235,9 +215,7 @@ void dfs(int currFence,int prevFence,int currTot) {
 		rtn;
 	}
 	each (a,currAdj) if (!used[a]) {used[a]=1;dfs(a,currFence,currTot+fenceWeights[a]);used[a]=0;}
-
 }
-
 int main() {
 	boost;
 	freopen("fence6.in","r",stdin);
@@ -256,7 +234,6 @@ int main() {
 			int b;read(b);
 			fences[num].stop.pb(b);
 		}
-
 	}
 	rep (i,1,n+1) {
 		initialAdj=fences[i].start;
@@ -266,9 +243,7 @@ int main() {
 		
 	}
 	outln(ans);
-
 	rtn 0;
 }
 //idk how this passes
-
 

@@ -19,9 +19,7 @@ using namespace std;
         cout << b[d]<<endl;
     }
     b.clear();
-
-
-
     }
     return 0;
  }
+

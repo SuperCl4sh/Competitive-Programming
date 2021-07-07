@@ -43,6 +43,6 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 	 }
 	 cout << tot/w << "\n";
 	 
-
 	 return 0;
  }
+

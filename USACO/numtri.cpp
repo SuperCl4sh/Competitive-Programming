@@ -3,9 +3,7 @@ ID:
 TASK: numtri
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -68,3 +66,4 @@ int main() {
     return 0;
 }
 //exact same as IOI '94 P1 :thonk:
+

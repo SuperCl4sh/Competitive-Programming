@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc03s1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,pos=1,snakes[3][2]={{54,19},{90,48},{99,77}},ladders[3][2]={{9,34},{40,64},{67,86}};
@@ -33,7 +32,7 @@ using namespace std;
         else {
             cout << "You are now on square " << pos << endl;
         }
-
     }
     return 0;
  }
+

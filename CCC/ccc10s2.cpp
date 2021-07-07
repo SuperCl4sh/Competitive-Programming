@@ -32,11 +32,10 @@ typedef pair<str,str>pss;
                 ans+=ar[e].F;
                 curr="";
                 break;
-
             }
-
         }
     }
     cout << ans << endl;
     return 0;
  }
+

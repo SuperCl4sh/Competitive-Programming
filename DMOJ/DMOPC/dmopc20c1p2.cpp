@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/dmopc20c1p2
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,d,c,tot1,tot2;
@@ -26,7 +25,6 @@ using namespace std;
             }
             //cout << tot1 << " " << tot2 << endl;
         }
-
         ar.clear();
         if (tot1>=tot2) {
             for (int i=0;i<t2.size();i++) {
@@ -38,9 +36,9 @@ using namespace std;
             cout << tot2 << endl;
             for (int i=0;i<t1.size();i++) {
             ar.push_back(t1[i]);
-
             }
         }
     }
     return 0;
  }
+

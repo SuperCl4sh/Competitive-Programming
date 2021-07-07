@@ -5,7 +5,6 @@ LANG: C++
 */
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -46,25 +45,19 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 ll Pow(ll a, ll b) {ll ret=1;while (b) {if (b&1) ret*=a;a*=a;b>>=1;}return ret;}
-
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 str target="";
-
 str A(str s) {
 	return string()+s[7]+s[6]+s[5]+s[4]+s[3]+s[2]+s[1]+s[0];
 }
-
 str B(str s) {
 	return string()+s[3]+s[0]+s[1]+s[2]+s[5]+s[6]+s[7]+s[4];
 	
 }
-
 str C(str s) {
 	return string()+s[0]+s[6]+s[1]+s[3]+s[4]+s[2]+s[5]+s[7];
 	
 }
-
 void solve() {
 	str curr="12345678",used,a,b,c;
 	C(curr);
@@ -88,11 +81,8 @@ void solve() {
 		cout << used[j];
 	}	
 	cout << "\n";
-
-
 	return;
 }
-
 int main() {
 	boost;
 	freopen("msquare.in","r",stdin);
@@ -103,7 +93,7 @@ int main() {
 		target+=c;
 	}
 	solve();
-
 	
 	return 0;
 }
+

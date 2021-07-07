@@ -52,9 +52,7 @@ while (n>0) {
 n=ans;
 ans=0;
 }
-
 return n;
-
 }
 void solve() {
 str ans="";
@@ -74,9 +72,6 @@ for (int i=0;i<5;i++) {
 	else ans+=to_string((10-curr%10));
 }
 cout << ans << "\n";
-
-
-
 return;
 }
 int main() {
@@ -90,6 +85,6 @@ int main() {
 		}
 		solve();
 	}
-
 	return 0;
 }
+

@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -47,15 +46,8 @@ for (auto x: adj[node]) {
 	else if (x==1) {done=1;return;}
 		dfs(x);
 }
-
-
-
 return;
 }
-
-
-
-
 int main() {
     boost;
     char a,b;
@@ -84,5 +76,5 @@ int main() {
 	    }
     	}
     return 0;
-
 }
+

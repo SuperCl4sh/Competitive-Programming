@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/dmopc15c4p4
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -38,7 +37,6 @@ const ll high= (ll)(1e15);
 const ll MOD2 = 998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int psa[100005];
 vector<vi>freq(2005);
 bool exist(int x, int y, int a) {
@@ -53,10 +51,7 @@ bool exist(int x, int y, int a) {
 	}
 	if (freq[a][left]>=x&&freq[a][left]<=y) return 1;
 	return 0;
-
 }
-
-
 int main() {
     boost;
     int a,b,c,d,n,k,q;
@@ -75,8 +70,7 @@ int main() {
 	a+=1000;b+=1000;
 	if (exist(c,d,a)&exist(c,d,b)) cout << "Yes\n";
 	else cout << "No\n";
-
-
     } 
     return 0;
 }
+

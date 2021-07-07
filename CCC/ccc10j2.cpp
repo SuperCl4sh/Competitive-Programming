@@ -61,7 +61,6 @@ int main() {
 				count2=0,forward1=1;
 			}
 		}
-
 		++counter;
 	}
 	if (pos>pos1) {
@@ -76,3 +75,4 @@ int main() {
 	//cout << pos << " " << pos1 << "\n";
 	return 0;
 }
+

@@ -18,7 +18,6 @@ typedef long double ld;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
-
  int main() {
     boost;
     str a,b;int counter=0;
@@ -31,3 +30,4 @@ typedef pair<str,str>pss;
     (counter==1)?printf("LARRY IS SAVED!\n"):printf("LARRY IS DEAD!\n");
     return 0;
  }
+

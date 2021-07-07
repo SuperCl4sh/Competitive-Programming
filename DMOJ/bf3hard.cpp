@@ -42,7 +42,6 @@ ll mm(ll a, ll b, ll m) {
     ll ans=(__int128)(((__int128)((__int128)((__int128)(a)*(__int128)(b))-(__int128)(m)*(__int128)((__int128)(1.L)/(__int128)(m)*(__int128)(a)*(__int128)(b))))%(__int128(m)));
     return (__int128)(ans+(__int128)((__int128)(m)*(__int128)((ans<0))-(__int128)(m*(ans>=m))));}
 //ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=mm(a,a,mod),b/=2) {if (b&1) ans=mm(ans,a,mod);}return ans;}
-
 ll Pow(ll a, ll b, ll c) {
 	ll ret=1;
 	while (b) {
@@ -52,8 +51,6 @@ ll Pow(ll a, ll b, ll c) {
 	}
 	return ret;
 }
-
-
 bool isPrime(ll n) {
 	if (n<2||n%6%4!=1) return (n|1)==3;
 	ll primes[]={2LL, 325LL, 9375LL, 28178LL, 450775LL, 9780504LL, 1795265022LL};
@@ -75,12 +72,10 @@ bool isPrime(ll n) {
 		
 	return 1;	
 }
-
 bool prime(ll n) {
 	for (ll j=2;j*j<=n;j++) if (n%j==0) return 0;
 	return 1;
 }
-
 int main() {
 	boost;
 	srand(time(NULL));
@@ -94,6 +89,6 @@ int main() {
 	}
 	cout << n << "\n";
 	
-
 	return 0;
 }
+

@@ -45,7 +45,6 @@ ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 const ll mxN=150010;
 ll n,tree[2*mxN];
-
 void update(int ind, int val) {
 	while (ind<=2*mxN) {
 		tree[ind]+=val;
@@ -61,7 +60,6 @@ ll sum(int ind) {
 	}
 	return ret;
 }
-
 int main() {
 	boost;
 	int a;
@@ -79,3 +77,4 @@ int main() {
 		
 	return 0;
 }
+

@@ -41,7 +41,6 @@ const ll high= (ll)(1e15);
 const ll MOD2=998244353;
 const int mxN=4*(int)(1e2);
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int main() {
 	boost;
 	int x,y,l,w,r,n;
@@ -61,3 +60,4 @@ int main() {
 	cout << sz(ans) << "\n";
 	return 0;
 }
+

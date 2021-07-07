@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc11s2
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int n,counter=0;
@@ -16,7 +15,6 @@ using namespace std;
         if (a==ar[j]) counter++;
     }
     cout << counter << endl;
-
-
     return 0;
  }
+

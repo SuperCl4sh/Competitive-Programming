@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -45,7 +44,6 @@ ll solve(int ind, int prev) {
 		}
 	}
 	return dp[ind][prev-1]=ans;
-
 }
 int main() {
     boost;
@@ -54,6 +52,5 @@ int main() {
     for (int i=0;i<n;i++) {read(ar[i][0]);read(ar[i][1]);read(ar[i][2]);}
     cout << solve(n-1,-1) << "\n";
     return 0;
-
 }
 

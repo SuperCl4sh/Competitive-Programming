@@ -23,5 +23,5 @@ for _ in range(T):
                 break
             elif prod>N: right=mid
             else: left=mid
-
     print 'YES' if good else 'NO'
+

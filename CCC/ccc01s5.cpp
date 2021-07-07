@@ -32,8 +32,6 @@ for (int i=0;i<n;i++) {
 }
 return;
 }
-
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     str s;
@@ -53,3 +51,4 @@ return;
     }
     return 0;
  }
+

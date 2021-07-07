@@ -3,7 +3,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-
 int main() {
     int a,b;
     vector <long long> arr;
@@ -16,5 +15,5 @@ int main() {
     for (int c=0;c<a;c++) {
         cout << arr[c] << endl;
     }
-
 }
+

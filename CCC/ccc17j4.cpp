@@ -76,9 +76,9 @@ int main() {
 			dig1=minutes%=10;
 			minutes=start;
 			if (h1-h2==dig1-dig2&&h2-dig1==dig1-dig2) ++ans;
-
 		}
 	}
 	cout << ans << "\n";
 	return 0;
 }
+

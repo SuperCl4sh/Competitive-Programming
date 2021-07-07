@@ -3,9 +3,7 @@ ID:
 TASK: subset
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"

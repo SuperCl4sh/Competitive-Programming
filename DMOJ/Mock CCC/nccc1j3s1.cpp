@@ -14,9 +14,8 @@ using namespace std;
             return 0;
         }
         ans=tot;
-
         m++;
     }
-
     return 0;
  }
+

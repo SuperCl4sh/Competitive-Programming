@@ -16,7 +16,6 @@ if (grid[x][y]=='x') {
     finalans[k]=dist;
     return;
 }
-
 if (grid[x][y]=='>') {
     solve(x,y+1,dist+1);
 }
@@ -32,14 +31,11 @@ else if (grid[x][y]=='^') {
 else {
     return;
 }
-
 return;
 }
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int r,s,x,y;
-
     cin >> r >> s;
     for (int i=0;i<r;i++) {
         cin >> g;
@@ -60,7 +56,6 @@ return;
     solve(x+1,y,0);
     k++;
     solve(x,y-1,0);
-
     if (ans==":(") {
         cout << ans << endl;
     }
@@ -85,6 +80,6 @@ return;
             cout << 'W' << endl;
         }
         }
-
     return 0;
  }
+

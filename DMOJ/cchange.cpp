@@ -22,8 +22,6 @@ int solve (int x) {
     }
     dp[x]=a;
     return dp[x];
-
-
 }
 int main() {
 ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
@@ -39,3 +37,4 @@ for (int i=0;i<n;i++) {
 cout << solve(x) << endl;
 return 0;
 }
+

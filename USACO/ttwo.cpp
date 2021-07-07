@@ -3,7 +3,6 @@ ID:
 TASK: ttwo
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
@@ -53,7 +52,6 @@ ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) 
 vector<str>grid;
 int main() {
 	boost;
-
 	str s;
 	int fx,fy,cx,cy,dir=0,dir2=0;
 	FOR (i,0,10) {
@@ -105,15 +103,12 @@ int main() {
 		}
 		
 		if (ans>1000) {ans=0;break;} //if statement > boolean array
-
 		dir%=4;
 		dir2%=4;
 		++ans;
 		
 	}
 	fout << ans << "\n";
-
-
 	return 0;
 }
 

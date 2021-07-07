@@ -22,8 +22,7 @@ typedef string str;
     for (int i=1;i<ar.size();i++) {
         if (ar[i]==ar[i-1]) tot--;
     }
-
     cout << tot << endl;
-
     return 0;
  }
+

@@ -12,4 +12,3 @@ for _ in range(K):
         total_one=N*(N-1)/2
     print total_one+pos*(T//X)
 
-

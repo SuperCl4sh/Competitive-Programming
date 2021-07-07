@@ -7,7 +7,6 @@ vector<vector<char>>field;
 vector<pair<int,int>>ans;
 void solve (int direction,int r, int c) {
 for (int q=0;q<moves.size();q++) {
-
     if (moves[q]=='L') {
         direction-=90;
         if (direction<0) {
@@ -42,12 +41,8 @@ for (int q=0;q<moves.size();q++) {
     }
 }
 field[r][c]='*';
-
 return;
-
-
 }
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int a,b;char s,g;
@@ -84,6 +79,6 @@ return;
         }
         cout << endl;
     }
-
     return 0;
  }
+

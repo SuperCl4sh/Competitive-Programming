@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/dmopc15c3p4
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -44,8 +43,6 @@ void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if 
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
 void Print(auto &temp) {for (auto x: temp) cout << x << " ";cout << "\n";return;}
-
-
 int main() {
     boost;
     ll x,y,hour;int n;
@@ -54,7 +51,6 @@ int main() {
     for (int i=0;i<n;i++) {
 	    cin >> x >> y;
 	    ar.pb(mp(x,y));
-
     }
     int src,q;
     cin >> src >> q;
@@ -84,9 +80,9 @@ int main() {
     	cin >> hour;
 	cout << upper_bound(dist,dist+n,hour)-dist << "\n";
     }
-
     
     
     
     return 0;
 }
+

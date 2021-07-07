@@ -47,7 +47,6 @@ void bfs() {
             cout << dist << "\n";
             return;
         }
-
         visited[x][y]=1;
         if (grid[x][y]=='+') {
             pq.P(mp(dist+1,mp(x+1,y)));
@@ -82,3 +81,4 @@ void bfs() {
     }
     return 0;
  }
+

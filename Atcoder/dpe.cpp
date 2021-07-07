@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/dpe
 #include <bits/stdc++.h>
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -49,7 +48,6 @@ void Time(clock_t start) {printf("Process took %lf seconds.\n",(clock()-start)/d
 int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1}; //:)
 clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-
 int main() {
 	int a,b,n,w;
 	cin >> n >> w;
@@ -63,7 +61,6 @@ int main() {
 	int ans=0;
 	for (int i=(int)(1e5);i>=0;i--) if (dp[i]<=w) {ans=i;break;}
 	cout << ans << "\n";
-
 	return 0;
 }
 //similar to the last problem, brute force suffices to AC (DMOJ only)

@@ -33,7 +33,6 @@ char _;
 const ll MOD = 1000000007;
 const ll mxN= (ll)(1e15);
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
  int main() {
 	 boost;
 	 ll n;
@@ -45,3 +44,4 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 	 printf("%lld\n",ans*2);
 	 return 0;
  }
+

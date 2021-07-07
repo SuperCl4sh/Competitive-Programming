@@ -46,16 +46,12 @@ void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') 
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 ll modmul(ll a, ll b, ll m) {ll ans=a*b-m*ll(1.L/m*a*b);return ans+m*(ans<0)-m*(ans>=m);}
 ll Pow(ll a, ll b, ll mod) {ll ans=1;for (; b;a=modmul(a,a,mod),b/=2) {if (b&1) ans=modmul(ans,a,mod);}return ans;}
-
 vt<vt<str>>possib(15);
-
 unordered_map<int,int>calc;
-
 bool compareBySize(const pii &a, const pii &b) {
 	if (a.S!=b.S) return a.S<b.S;
 	return a.F<b.F;
 }
-
 void compute(str s, int k) {
 	if (k>sz(s)) return;
 	int needle=stoi(s.substr(0,k),0,2);
@@ -67,9 +63,7 @@ void compute(str s, int k) {
 		calc[needle]++;
 	}
 	return;
-
 }
-
 str convert(int n,int a) {
 	str ret="";
 	FOR (i,0,a) ret+="0";
@@ -80,14 +74,9 @@ str convert(int n,int a) {
 		--ind;
 	}
 	return ret;
-
-
-
 }
-
 int main() {
 	boost;
-
 	int a,b,n;str s="",S;
 	fin >> a >> b >> n;
 	
@@ -114,8 +103,6 @@ int main() {
 		fout << i << "\n";
 		sort(all(ans[i]),compareBySize);
 		int Counter=0;
-
-
 		FOR (j,0,sz(ans[i])) {
 			fout << convert(ans[i][j].F,ans[i][j].S);
 			if (j+1<sz(ans[i])&&Counter<5) {fout << " ";}
@@ -126,6 +113,6 @@ int main() {
 	}
 	
 	
-
 	return 0;
 }
+

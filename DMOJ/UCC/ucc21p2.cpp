@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/ucc21p2
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
 	ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 	
@@ -19,7 +17,7 @@ int main() {
 		}
 	}
 	cout << highest << "\n";
-
 	
 	return 0;
 }
+

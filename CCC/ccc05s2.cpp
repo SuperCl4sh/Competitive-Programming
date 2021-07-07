@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/ccc05s2
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
 long long x,y,maxX,maxY,currX=0,currY=0;
 cin >> maxX >> maxY;
@@ -19,5 +17,5 @@ do {
   }
 }while (x!=0 || y!=0);
 return 0;
-
 }
+

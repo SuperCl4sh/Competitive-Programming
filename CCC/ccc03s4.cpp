@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ccc03s4
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -73,3 +72,4 @@ int main() {
 	
 	return 0;
 }
+

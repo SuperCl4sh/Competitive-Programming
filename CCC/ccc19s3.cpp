@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/ccc19s3
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -168,8 +167,6 @@ void solve(vector<vll>ar,vector<vector<bool>>bad) {
 		}
 		solve(ar,bad);
 		return;
-
-
 }
 int main() {
     boost;
@@ -200,3 +197,4 @@ int main() {
     
     return 0;
 }
+

@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast,unroll-loops")
 using namespace std;
-
 #define mp make_pair
 #define pb push_back
 #define pf push_front
@@ -33,7 +32,6 @@ char _;
 const int MOD = 1000000007;
 const ll mxN= (ll)(1e15);
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
-
 int main(){
     boost;
     ld x,y;
@@ -41,3 +39,4 @@ int main(){
     cout << fixed << sp(2) << x*y/4 << "\n";
     return 0;
 }
+

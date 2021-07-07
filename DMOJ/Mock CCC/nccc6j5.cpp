@@ -63,5 +63,5 @@ int main() {
     }
     cout << solve(n,0) << "\n";
     return 0;
-
 }
+

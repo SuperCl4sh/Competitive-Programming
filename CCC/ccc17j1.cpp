@@ -4,7 +4,6 @@
 using namespace std;
 typedef long long ll;
 typedef string str;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     int x,y;
@@ -23,3 +22,4 @@ typedef string str;
     }
     return 0;
  }
+

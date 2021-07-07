@@ -14,6 +14,6 @@ using namespace std;
         }
  }
  printf("The 1-3-sum is %i",tot);
-
     return 0;
  }
+

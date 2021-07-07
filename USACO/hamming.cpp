@@ -3,9 +3,7 @@ ID:
 TASK: hamming
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -69,9 +67,6 @@ void solve(str curr,int ind) {
 	solve(curr,ind+1);
 	curr[ind]='1';
 	solve(curr,ind+1);	
-
-
-
 	return;
 }
 int convert(str s) {

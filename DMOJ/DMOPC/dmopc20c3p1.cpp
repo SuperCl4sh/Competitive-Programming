@@ -56,7 +56,7 @@ int main() {
 	}
 	printf("YES\n");
 	
-
 	
 	return 0;
 }
+

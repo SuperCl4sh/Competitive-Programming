@@ -1,7 +1,6 @@
 //https://dmoj.ca/problem/ccc05j1
 #include <bits/stdc++.h>
 using namespace std;
-
  int main() {
     ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     float a,b,c;
@@ -12,7 +11,6 @@ using namespace std;
     float planB = (a-250)*0.45;
     planB=max(planB,0.0F);
     planB+=0.35*b+0.25*c;
-
     cout << fixed << setprecision(2) << "Plan A costs " << planA << endl;
     cout << fixed << setprecision(2) << "Plan B costs " << planB << endl;
     if (planA>planB) {
@@ -26,3 +24,4 @@ using namespace std;
     }
     return 0;
  }
+

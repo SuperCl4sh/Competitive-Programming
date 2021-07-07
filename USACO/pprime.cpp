@@ -3,9 +3,7 @@ ID:
 TASK: pprime
 LANG: C++                 
 */
-
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -49,7 +47,6 @@ const ll MOD2 = 998244353;
 void read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar();if (Z=='-') {negat=1;Z=getchar();}for(;(Z>47&&Z<58);Z=getchar()){num=num*10+Z-48;}if(negat){num*=-1;}}
 void Read(auto &num) {register int Z;num=0;bool negat=0;Z=getchar_unlocked();if (Z=='-') {negat=1;Z=getchar_unlocked();}for(;(Z>47&&Z<58);Z=getchar_unlocked()){num=num*10+Z-48;}if(negat){num*=-1;}}
 set<int>palin;
-
 bool prime(int n) {
 	for (int i=3;i<=(int)(sqrt(n));i++) {
 		if (n%i==0) return 0;
@@ -94,3 +91,4 @@ int main() {
     return 0;
 }
 //this took longer than i'm willing to admit .-.
+

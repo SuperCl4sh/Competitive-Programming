@@ -45,7 +45,6 @@ void sieve() {
 		if (counter==k) {printf("%i\n",i);return;}
 		while (j<=n) {
 	
-
 			if (!isPrime[j]) {
 				++counter;
 				isPrime[j]=1;
@@ -58,17 +57,15 @@ void sieve() {
 		}
 		}
 	}
-
-
 return;
 }
 int main() {
 	boost;
 read(n);read(k);
 sieve();
-
 	
 	
 	
 	return 0;
 }
+

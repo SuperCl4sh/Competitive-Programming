@@ -1,6 +1,5 @@
 //https://dmoj.ca/problem/coci06c5p6
 #include <bits/stdc++.h>
-
 #pragma GCC optimize "Ofast"
 #pragma GCC optimize "unroll-loops"
 #pragma GCC optimize "omit-frame-pointer"
@@ -93,3 +92,4 @@ int main() {
 	cout << left << "\n";
 	return 0;
 }
+

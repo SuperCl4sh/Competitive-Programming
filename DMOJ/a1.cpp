@@ -54,8 +54,6 @@ int main() {
 		str ans=s.substr(sz(temp)+1,remove)+s.substr(sz(temp)+remove+2,sz(s)-remove-1);
 		cout << i+1 << " " << ans << "\n";	
 	}
-
-
-
 	return 0;
 }
+

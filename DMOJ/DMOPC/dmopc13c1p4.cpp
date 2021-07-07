@@ -25,7 +25,6 @@ typedef pair<str,str>pss;
 char _;
 int l,w,startx=0,starty=0;
 vector<string>grid;
-
 bool visited[60][60];
 void bfs() {
 priority_queue<pair<int,pii>,vector<pair<int,pii>>,greater<pair<int,pii>>>pq;
@@ -38,7 +37,6 @@ for (int i=0;i<60;i++) {
 }
 int ans=INT_MAX;
 while (!pq.empty()) {
-
     dist=pq.top().F;
     x=pq.top().S.F;
     y=pq.top().S.S;
@@ -55,8 +53,6 @@ while (!pq.empty()) {
     pq.P(mp(dist+1,mp(x,y-1)));
 }
 (ans>=60)?cout<<"#notworth\n":cout<<ans<<"\n";
-
-
 }
  int main() {
     boost;
@@ -76,6 +72,6 @@ while (!pq.empty()) {
         }
         bfs();
     }
-
     return 0;
  }
+

@@ -24,7 +24,6 @@ typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
 char _;
-
  int main() {
     boost;
     int a,n,t,k,v,tot=0,ans=0,curr=1;
@@ -43,14 +42,13 @@ char _;
         if (i>1) {
         tot-=ar[i-1];tot+=ar[i+t-1];
         }
-
         if (tot>=k) continue;
         for (int j=t+i-1;j>=i&&j<=n;j--) {
             if (ar[j]==0) {ans++,tot++;ar[j]=1;}
             if (tot>=k) break;
         }
-
     }
     printf("%i\n",ans);
     return 0;
  }
+

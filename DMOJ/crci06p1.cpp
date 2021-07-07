@@ -73,7 +73,6 @@ int main() {
 			}
 		}
 		}
-
 	}
 	for (int c=1;c<=n;c++) {
 		for (int x=1;x<=curr;x++) {
@@ -82,9 +81,9 @@ int main() {
 		}
 	}
 	
-
 	
 	
 	
 	return 0;
 }
+

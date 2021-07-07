@@ -38,11 +38,7 @@ int find (str s,int last) {
 		if (s[i]=='N') return i;
 	}
 	return -1;
-
-
-
 }
-
 bool solve(str s) {
 if (len(s)==1&&s[0]=='A') return 1;
 else if (len(s)==1) return 0;
@@ -55,14 +51,9 @@ while (true) {
 	if (ind==-1) break;
 	if (solve(s.substr(0,ind))&&solve(s.substr(ind+1,len(s)-ind-1))) return 1;
 	last=ind+1;
-
 }
-
-
-
 return 0;
 }
-
 int main() {
 	boost;
 	str s;
@@ -74,3 +65,4 @@ int main() {
 	}
 	return 0;
 }
+

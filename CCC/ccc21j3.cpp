@@ -1,8 +1,6 @@
 //https://dmoj.ca/problem/ccc21j3
 #include <bits/stdc++.h>
-
 using namespace std;
-
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
     string s;int counter;
@@ -19,3 +17,4 @@ int main() {
     }
     return 0;
 }
+
