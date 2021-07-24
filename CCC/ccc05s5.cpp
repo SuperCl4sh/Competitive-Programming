@@ -25,9 +25,8 @@ typedef unsigned long long ull;
 #define fr front()
 #define bk back()
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define PI 3.14159265
 #define sz(s) (int)s.size()
-#define sp(x) fixed << setprecision(x)
+#define sp(x) cout << fixed << setprecision(x)
 #define all(a) a.begin(),a.end()
 #define mem(ar,a) memset(ar,a,sizeof(ar))
 #define FOR(i,a,n,b) for (int i=a;i<n;i+=b)
@@ -86,22 +85,18 @@ template<typename A, typename... types> void write(A s, types... s1) {
 }
 template<typename A, typename... types> void writeln(A s, types... s1) {
 	out(s);
-	write(s1...);
-	cout << '\n';
+	write(s1...,'\n');
 }
 template<typename A> void writeln(A s) {
-	out(s);
-	cout << '\n';
+	out(s,'\n');
 }
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
-	out(s1...);
-	cout << '\n';
+	out(s1...,'\n');
 }
 template<typename A> void outln(A s) {
-	out(s);
-	cout << '\n';
+	out(s,'\n');
 }
 
 template <typename T,typename A> T Pow(T a, A b) {
@@ -122,42 +117,52 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-bool done=0;
-int stop,counter=0;
-void solve(vt<deque<int>>curr) {
-	++counter;
-	if (done||sz(moves)>stop) rtn;
-	else if (curr[1].empty()&&curr[2].empty()) {done=1;rtn;}
-	int prevTo=-1,prevFrom=-1;
-	if (!moves.empty()) prevTo=moves.bk.S,prevFrom=moves.bk.F;
-	rep (i,1,4) {
-		rep (j,1,4) {
-			if (i==j||curr[i].empty()) continue;
-			if (i!=prevFrom||j!=prevTo) {
-				if (curr[j].empty()||curr[i].fr<curr[j].fr) {
-					moves.pb(mp(i,j));
-					curr[j].pf(curr[i].fr);curr[i].PF();
-					solve(curr);
-					if (done) rtn;
-					moves.PB();
-					curr[i].pf(curr[j].fr);curr[j].PF();
-				}
-			}
-		}
-				
+const int MM=(int)(1e5);
+map<int,int>ids;
+int id=1;
+struct ft {
+	void upd(int ind, int val) {
+		if (!ind) rtn;
+		while (ind<=MM) tree[ind]+=val,ind+=ind&(-ind);
 	}
-	
-}
+	ll sum(int ind) {
+		int ret=0;
+		while (ind) ret+=tree[ind],ind-=ind&(-ind);
+		rtn ret;
+	}
+	ll query(int l, int r) {
+		rtn sum(r)-sum(l-1);
+	}
+	void init() {
+		mem(tree,0);
+	}
+	int tree[MM+5];
+}freq;
 int main() {
 	boost;
-	int N;
-	read(N);
-	stop=(1<<N)-1;
-	vt<deque<int>>curr(4);
-	ROF (i,N,0,1) curr[1].pf(i);
-	solve(curr);
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	int T;read(T);
+	vt<int>vals(T);read(vals);
+	vt<int>valsCopy=vals;
+	sort(all(valsCopy));
+	rep (i,0,T) {
+		if (i) {
+			if (valsCopy[i]!=valsCopy[i-1]) ids[valsCopy[i]]=id++;
+		}
+		else ids[valsCopy[i]]=id++;
+	}
+	freq.init();
+	ll ans=0;
+	rep (i,0,T) {
+		ans+=freq.query(ids[vals[i]],MM)+1;
+		freq.upd(ids[vals[i]]-1,1);
+	}
+	str tempAns=to_string(ld(ans)/ld(T)),finalAns="";
+	int ind=0;
+	while (ind<sz(tempAns)) {
+		if (tempAns[ind]=='.') {finalAns+=tempAns.substr(ind,3);break;}
+		finalAns+=tempAns[ind];
+		++ind;
+	}
+	outln(finalAns);
 	rtn 0;
 }

@@ -25,9 +25,8 @@ typedef unsigned long long ull;
 #define fr front()
 #define bk back()
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define PI 3.14159265
 #define sz(s) (int)s.size()
-#define sp(x) fixed << setprecision(x)
+#define sp(x) cout << fixed << setprecision(x)
 #define all(a) a.begin(),a.end()
 #define mem(ar,a) memset(ar,a,sizeof(ar))
 #define FOR(i,a,n,b) for (int i=a;i<n;i+=b)
@@ -122,42 +121,23 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-bool done=0;
-int stop,counter=0;
-void solve(vt<deque<int>>curr) {
-	++counter;
-	if (done||sz(moves)>stop) rtn;
-	else if (curr[1].empty()&&curr[2].empty()) {done=1;rtn;}
-	int prevTo=-1,prevFrom=-1;
-	if (!moves.empty()) prevTo=moves.bk.S,prevFrom=moves.bk.F;
-	rep (i,1,4) {
-		rep (j,1,4) {
-			if (i==j||curr[i].empty()) continue;
-			if (i!=prevFrom||j!=prevTo) {
-				if (curr[j].empty()||curr[i].fr<curr[j].fr) {
-					moves.pb(mp(i,j));
-					curr[j].pf(curr[i].fr);curr[i].PF();
-					solve(curr);
-					if (done) rtn;
-					moves.PB();
-					curr[i].pf(curr[j].fr);curr[j].PF();
-				}
-			}
-		}
-				
-	}
-	
-}
 int main() {
 	boost;
-	int N;
-	read(N);
-	stop=(1<<N)-1;
-	vt<deque<int>>curr(4);
-	ROF (i,N,0,1) curr[1].pf(i);
-	solve(curr);
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	rep (_,0,10) {
+		int N;
+		read(N);
+		vt<int>ar(N);
+		read(ar);
+		int target=N;
+		ROF (i,N-1,-1,1) if (ar[i]==target) --target;
+		int ans=0;
+		while (target) {
+			rep (i,0,N) {
+				if (ar[i]==target) {ar.erase(ar.begin()+i),ar.insert(ar.begin(),target),--target,ans+=i;}
+			}
+		}
+
+		outln(ans);
+	}
 	rtn 0;
 }

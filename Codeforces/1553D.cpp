@@ -25,9 +25,8 @@ typedef unsigned long long ull;
 #define fr front()
 #define bk back()
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define PI 3.14159265
 #define sz(s) (int)s.size()
-#define sp(x) fixed << setprecision(x)
+#define sp(x) cout << fixed << setprecision(x)
 #define all(a) a.begin(),a.end()
 #define mem(ar,a) memset(ar,a,sizeof(ar))
 #define FOR(i,a,n,b) for (int i=a;i<n;i+=b)
@@ -86,22 +85,18 @@ template<typename A, typename... types> void write(A s, types... s1) {
 }
 template<typename A, typename... types> void writeln(A s, types... s1) {
 	out(s);
-	write(s1...);
-	cout << '\n';
+	write(s1...,'\n');
 }
 template<typename A> void writeln(A s) {
-	out(s);
-	cout << '\n';
+	out(s,'\n');
 }
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
-	out(s1...);
-	cout << '\n';
+	out(s1...,'\n');
 }
 template<typename A> void outln(A s) {
-	out(s);
-	cout << '\n';
+	out(s,'\n');
 }
 
 template <typename T,typename A> T Pow(T a, A b) {
@@ -122,42 +117,55 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-bool done=0;
-int stop,counter=0;
-void solve(vt<deque<int>>curr) {
-	++counter;
-	if (done||sz(moves)>stop) rtn;
-	else if (curr[1].empty()&&curr[2].empty()) {done=1;rtn;}
-	int prevTo=-1,prevFrom=-1;
-	if (!moves.empty()) prevTo=moves.bk.S,prevFrom=moves.bk.F;
-	rep (i,1,4) {
-		rep (j,1,4) {
-			if (i==j||curr[i].empty()) continue;
-			if (i!=prevFrom||j!=prevTo) {
-				if (curr[j].empty()||curr[i].fr<curr[j].fr) {
-					moves.pb(mp(i,j));
-					curr[j].pf(curr[i].fr);curr[i].PF();
-					solve(curr);
-					if (done) rtn;
-					moves.PB();
-					curr[i].pf(curr[j].fr);curr[j].PF();
-				}
-			}
-		}
-				
-	}
-	
-}
 int main() {
 	boost;
-	int N;
-	read(N);
-	stop=(1<<N)-1;
-	vt<deque<int>>curr(4);
-	ROF (i,N,0,1) curr[1].pf(i);
-	solve(curr);
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	int t;
+	read(t);
+	while (t--) {
+		str S,T;
+		read(S,T);
+		if (sz(T)>sz(S)) {outln("NO");continue;}
+		vt<int>inds;
+		vt<vt<int>>oddFreq(26),evenFreq(26);
+		bool even=0,odd=0;
+		rep (i,0,sz(S)) {
+			if (S[i]==T[0]) {
+				if (!(i&1)&&!even) even=1,inds.pb(i);
+				if (i&1&&!odd) odd=1,inds.pb(i);
+			}
+			if (i&1) oddFreq[S[i]-'a'].pb(i);
+			else evenFreq[S[i]-'a'].pb(i);
+			
+		}
+		if (inds.empty()) {outln("NO");continue;}
+		bool done=0;
+		each(i,inds) {
+			int pos,j=0,last=0;
+			while (i<sz(S)&&j<sz(T)) {
+				if (S[i]==T[j]&&!last) ++i,++j;
+				else {
+					if (!(i&1)) {
+						if (evenFreq[T[j]-'a'].empty()) break;
+						pos=upper_bound(all(evenFreq[T[j]-'a']),i)-evenFreq[T[j]-'a'].begin();
+						if (pos<sz(evenFreq[T[j]-'a'])&&evenFreq[T[j]-'a'][pos]>i) i=evenFreq[T[j]-'a'][pos];
+						else break;
+					} 
+					else {
+						if (oddFreq[T[j]-'a'].empty()) break;
+						pos=upper_bound(all(oddFreq[T[j]-'a']),i)-oddFreq[T[j]-'a'].begin();
+						if (pos<sz(oddFreq[T[j]-'a'])&&oddFreq[T[j]-'a'][pos]>i) i=oddFreq[T[j]-'a'][pos];
+						else break;
+					}
+				}
+			}
+			if (j==sz(T)) {
+				if (!((sz(S)-i+1)&1)) continue;
+			}
+			done|=(j==sz(T));
+			if (done) break;
+		}
+		outln((done)?"YES":"NO");
+	}	
 	rtn 0;
 }
+

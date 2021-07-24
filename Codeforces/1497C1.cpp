@@ -25,9 +25,8 @@ typedef unsigned long long ull;
 #define fr front()
 #define bk back()
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define PI 3.14159265
 #define sz(s) (int)s.size()
-#define sp(x) fixed << setprecision(x)
+#define sp(x) cout << fixed << setprecision(x)
 #define all(a) a.begin(),a.end()
 #define mem(ar,a) memset(ar,a,sizeof(ar))
 #define FOR(i,a,n,b) for (int i=a;i<n;i+=b)
@@ -122,42 +121,36 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-bool done=0;
-int stop,counter=0;
-void solve(vt<deque<int>>curr) {
-	++counter;
-	if (done||sz(moves)>stop) rtn;
-	else if (curr[1].empty()&&curr[2].empty()) {done=1;rtn;}
-	int prevTo=-1,prevFrom=-1;
-	if (!moves.empty()) prevTo=moves.bk.S,prevFrom=moves.bk.F;
-	rep (i,1,4) {
-		rep (j,1,4) {
-			if (i==j||curr[i].empty()) continue;
-			if (i!=prevFrom||j!=prevTo) {
-				if (curr[j].empty()||curr[i].fr<curr[j].fr) {
-					moves.pb(mp(i,j));
-					curr[j].pf(curr[i].fr);curr[i].PF();
-					solve(curr);
-					if (done) rtn;
-					moves.PB();
-					curr[i].pf(curr[j].fr);curr[j].PF();
-				}
-			}
-		}
-				
-	}
-	
-}
 int main() {
 	boost;
-	int N;
-	read(N);
-	stop=(1<<N)-1;
-	vt<deque<int>>curr(4);
-	ROF (i,N,0,1) curr[1].pf(i);
-	solve(curr);
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	int T;
+	read(T);
+	vt<vt<ll>>ans={{1,1,1},{1,1,2}};
+	sp(0);
+	while (T--) {
+		ll N,K;
+		read(N,K);
+		if (N<=4) {
+			outln(ans[N-3]);
+			continue;
+		}
+		if (N&1) {
+			outln(floor(N/2),floor(N/2),1);
+			continue;
+		}
+		if ((N/2)&1) {
+			outln(N/2-1,N/2-1,2);
+		}
+		else {
+			ll curr=1,halved=N/2;
+			while (curr<halved) {
+				if (((halved-curr)*2*curr)/__gcd(halved-curr,2*curr)<=halved) {
+					outln(halved-curr,halved-curr,2*curr);
+					break;
+				}
+				curr<<=1;
+			}	
+		}
+	}
 	rtn 0;
 }

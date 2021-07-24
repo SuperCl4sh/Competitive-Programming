@@ -25,9 +25,8 @@ typedef unsigned long long ull;
 #define fr front()
 #define bk back()
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define PI 3.14159265
 #define sz(s) (int)s.size()
-#define sp(x) fixed << setprecision(x)
+#define sp(x) cout << fixed << setprecision(x)
 #define all(a) a.begin(),a.end()
 #define mem(ar,a) memset(ar,a,sizeof(ar))
 #define FOR(i,a,n,b) for (int i=a;i<n;i+=b)
@@ -86,22 +85,18 @@ template<typename A, typename... types> void write(A s, types... s1) {
 }
 template<typename A, typename... types> void writeln(A s, types... s1) {
 	out(s);
-	write(s1...);
-	cout << '\n';
+	write(s1...,'\n');
 }
 template<typename A> void writeln(A s) {
-	out(s);
-	cout << '\n';
+	out(s,'\n');
 }
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
-	out(s1...);
-	cout << '\n';
+	out(s1...,'\n');
 }
 template<typename A> void outln(A s) {
-	out(s);
-	cout << '\n';
+	out(s,'\n');
 }
 
 template <typename T,typename A> T Pow(T a, A b) {
@@ -122,42 +117,35 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-bool done=0;
-int stop,counter=0;
-void solve(vt<deque<int>>curr) {
-	++counter;
-	if (done||sz(moves)>stop) rtn;
-	else if (curr[1].empty()&&curr[2].empty()) {done=1;rtn;}
-	int prevTo=-1,prevFrom=-1;
-	if (!moves.empty()) prevTo=moves.bk.S,prevFrom=moves.bk.F;
-	rep (i,1,4) {
-		rep (j,1,4) {
-			if (i==j||curr[i].empty()) continue;
-			if (i!=prevFrom||j!=prevTo) {
-				if (curr[j].empty()||curr[i].fr<curr[j].fr) {
-					moves.pb(mp(i,j));
-					curr[j].pf(curr[i].fr);curr[i].PF();
-					solve(curr);
-					if (done) rtn;
-					moves.PB();
-					curr[i].pf(curr[j].fr);curr[j].PF();
-				}
-			}
-		}
-				
-	}
-	
+set<str>possib;
+void generate(int ind,str curr) {
+	if (ind==sz(curr)) {possib.insert(curr);rtn;}
+	else if (curr[ind]!='?') {generate(ind+1,curr);rtn;}
+	curr[ind]='1';generate(ind+1,curr);
+	curr[ind]='0';generate(ind+1,curr);
 }
 int main() {
 	boost;
-	int N;
-	read(N);
-	stop=(1<<N)-1;
-	vt<deque<int>>curr(4);
-	ROF (i,N,0,1) curr[1].pf(i);
-	solve(curr);
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	int T;
+	read(T);
+	while (T--) {
+		possib.clear();
+		str S;
+		read(S);
+		generate(0,S);
+		int ans=10;
+		each(game,possib) {
+			int one=0,two=0,remOne=5,remTwo=5;
+			rep (i,0,10) {
+				if (game[i]=='1') {
+					if (!(i&1)) one++;
+					else two++;
+				}
+				remOne-=!(i&1),remTwo-=i&1;
+				if (one>two+remTwo||two>one+remOne) {ans=min(ans,i+1);break;}
+			}
+		}
+		outln(ans);
+	}
 	rtn 0;
 }
