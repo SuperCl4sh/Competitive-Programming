@@ -1,21 +1,18 @@
 #include <bits/stdc++.h>
+//#include <ext/pb_ds/assoc_container.hpp>
+//using namespace __gnu_pbds;
 using namespace std;
 /*
-#pragma GCC optimization ("O3")
-#pragma GCC optimization ("unroll-loops")
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
 */
 //^speed
 //typedefs
 typedef long long ll;
 typedef string str;
 typedef pair<int,int> pii;
-typedef pair<ll,ll>pll;
 typedef long double ld;
-typedef pair<ld, ld>pld;
-typedef pair<double,double>pdd;
 typedef unsigned long long ull;
-typedef pair<ld,ld>pld;
-typedef pair<str,str>pss;
 //defines
 #define mp make_pair
 #define pb push_back
@@ -27,7 +24,7 @@ typedef pair<str,str>pss;
 #define fr front()
 #define bk back()
 #define S second
-#define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);srand(time(NULL))
+#define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define PI 3.14159265
 #define sz(s) (int)s.size()
 #define sp(x) fixed << setprecision(x)
@@ -54,11 +51,13 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
+ 
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
+ 
 }
 void read(ld &num) {
 	str s="";
@@ -78,10 +77,11 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 	read(a.F);
 	read(a.S);
 }
-template <typename G> void read(vt<G>&ar) {
+template <typename A> void read(vt<A>&ar) {
 	EACH(a,ar) read(a);
+ 
 }
-template <typename H, typename... Types> void read(H&  num, Types&... num1) {
+template <typename A, typename... Types> void read(A&  num, Types&... num1) {
 	read(num);read(num1...);
 }
 //output
@@ -119,13 +119,12 @@ void out(double a) {
 	str s=to_string(a);
 	out(s);
 }
-void out (const char *s) {
-	
+void out(const char *s) {
 	rep (i,0,strlen(s)) {
 		out(s[i]);
 	}
 }
-template<typename T,typename M> void out(pair<T,M>a) {
+template<typename A,typename B> void out(pair<A,B>a) {
 	out(a.F);
 	pc(' ');
 	out(a.S);
@@ -134,49 +133,52 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
+ 
 	}
 }
-template <typename h, typename... types> void out(h s, types... s1) {
+template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s);
 	if (sizeof...(s1)) pc(' ');
 	out(s1...);
 }
 void write() {}
-template<typename v, typename... others> void write(v s, others... s1) {
+template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
 }
-template<typename v, typename... others> void writeln(v s, others... s1) {
+template<typename A, typename... types> void writeln(A s, types... s1) {
 	out(s);
 	write(s1...);
 	pc('\n');
 }
-template<typename v> void writeln(v s) {
+template<typename A> void writeln(A s) {
 	out(s);
 	pc('\n');
 }
-template<typename v, typename... others> void outln(v s, others... s1) {
+template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
 	out(s1...);
 	pc('\n');
 }
-template<typename v> void outln(v s) {
+template<typename A> void outln(A s) {
 	out(s);
 	pc('\n');
 }
-template <typename T,typename S> ll Pow(T a, S b) {
-	ll ret=1;
+ 
+template <typename T,typename A> T Pow(T a, A b) {
+	T ret=1;
 	while (b) {
 		if (b&1) ret*=a;a*=a;b>>=1;
 	}
 	rtn ret;
 }
-template <typename T=ll, typename S, typename M> T Pow(T a, S b, M mod) {
-	ll ret=1;
+template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
+	T ret=1;
 	while (b) {
-		if (b&1) ret*=a;a=(a*a)%mod;b>>=1;
+		if (b&1) ret=(ret*a)%mod;a=(a*a)%mod;b>>=1;
 	}
+	assert(ret>=0);
 	rtn ret;
 }
 void Time(clock_t start) {
@@ -186,17 +188,65 @@ void Time(clock_t start) {
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-ll bruh[9]={-1,0,6,28,96,252,550,1056,1848};
+vt<str>grid(8);
+int ans=0;
+bool check() {
+	rep (i,0,8) {
+		rep (j,0,8) {
+			if (grid[i][j]=='X') {
+				int cnt=0;
+				rep (k,0,8) {
+					cnt+=(grid[i][k]=='X');
+					if (cnt==2) rtn 0;
+				}
+				cnt=0;
+				rep (k,0,8) {
+					cnt+=(grid[k][j]=='X');
+					if (cnt==2) rtn 0;
+				}
+				int row=i,col=j;cnt=0;
+				while (row>=0&&col<8&&cnt<2) {
+					cnt+=(grid[row][col]=='X');
+					row--,col++;
+				}
+				row=i,col=j;
+				while (row<8&&col>=0&&cnt<=2) {
+					cnt+=(grid[row][col]=='X');
+					row++,col--;
+				}
+				if (cnt>2) rtn 0;
+				row=i,col=j;cnt=0;
+				while (row<8&&col<8&&cnt<2) {
+					cnt+=(grid[row][col]=='X');
+					++row,++col;
+				}
+				row=i,col=j;
+				while (row>=0&&col>=0&&cnt<=2) {
+					cnt+=(grid[row][col]=='X');
+					--row,--col;
+				}
+				if (cnt>2) rtn 0;
+			}
+		}
+	}
+	rtn 1;
+}
+void solve(int used) {
+	if (used==8) {
+		ans+=check();
+		rtn;
+	}
+	rep (i,0,8) {
+		if (grid[used][i]=='*'||used&&grid[used-1][i]=='X'||used&&i&&grid[used-1][i-1]=='X'||used&&i+1<8&&grid[used-1][i+1]=='X') continue;
+		grid[used][i]='X';
+		solve(used+1);
+		grid[used][i]='.';
+	}
+}
 int main() {
 	boost;
-	ll N;	
-	read(N);
-	for (ll i=1;i<=N;i++) {
-		if (i<=6) {outln(bruh[i]);continue;}
-		ll res=4LL*(i*i-3)+8*(i*i-4)+4*(i-4)*(i*i-5); //on perimeter of i by i square
-		ll res2=4LL*(i*i-5)+8*(i*i-7)+4*(i*i-7)*(i-6); //on perimeter of i-2 by i-2 square 
-		ll res3=(i-4)*(i-4)*(i*i-9); //on perimeter/inside of i-4 by i-4 square
-		outln((res+res2+res3)/2);
-	}
+	read(grid);
+	solve(0);
+	outln(ans);
 	rtn 0;
 }

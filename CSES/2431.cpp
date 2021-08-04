@@ -119,28 +119,34 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
+ll check(ll num) {
+	ll tot=0,curr=10LL;
+	while (curr<=num) {
+		tot+=(curr-(curr/10LL))*sz(to_string(curr/10LL));
+		curr*=10LL;
+	}
+	curr/=10LL;
+	tot+=(num-curr+1)*sz(to_string(curr));
+	rtn tot;
+}
+ll go(ll K) {
+	ll l=0,r=(ll)(1e18),m;
+	while (r-l>1LL) {
+		m=l+r>>1LL;
+		ll res=check(m);
+		if (res<K) l=m;
+		else r=m;
+	}
+	rtn l;
+}
 int main() {
 	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
-		}
+	int Q;read(Q);
+	while (Q--) {
+		ll K;read(K);
+		ll res=go(K);
+		str nxt=to_string(res+1LL);ll rem=K-check(res);
+		outln(nxt[rem-1]);
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
 	rtn 0;
 }

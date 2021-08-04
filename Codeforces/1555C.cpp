@@ -25,6 +25,7 @@ typedef unsigned long long ull;
 #define fr front()
 #define bk back()
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define PI 3.14159265
 #define sz(s) (int)s.size()
 #define sp(x) cout << fixed << setprecision(x)
 #define all(a) a.begin(),a.end()
@@ -85,20 +86,22 @@ template<typename A, typename... types> void write(A s, types... s1) {
 }
 template<typename A, typename... types> void writeln(A s, types... s1) {
 	out(s);
-	write(s1...,'\n');
+	write(s1...);
+	cout << '\n';
 }
 template<typename A> void writeln(A s) {
-	out(s,'\n');
-}
-template<typename A> void outln(A s) {
 	out(s);
-	out('\n');
+	cout << '\n';
 }
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
 	out(s1...);
-	out('\n');
+	cout << '\n';
+}
+template<typename A> void outln(A s) {
+	out(s);
+	cout << '\n';
 }
 
 template <typename T,typename A> T Pow(T a, A b) {
@@ -119,28 +122,28 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
 int main() {
 	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+	int T;read(T);
+	while (T--) {
+		int M;read(M);
+		vt<vt<ll>>grid;
+		rep (_,0,2) {
+			vt<ll>row(M+1);
+			rep (i,1,M+1) read(row[i]);
+			grid.pb(row);
 		}
+		ll psa[2][M+1];mem(psa,0LL);
+		rep (i,0,2) {
+			rep (j,1,M+1) psa[i][j]=psa[i][j-1]+grid[i][j];
+		}
+		ll ans=INT_MAX;
+		rep (i,1,M+1) {
+			ll top=psa[0][i],bot=psa[1][M]-psa[1][i-1];
+			ll topRem=psa[0][M]-top,botRem=psa[1][M]-bot;
+			ans=min(ans,max(topRem,botRem));
+		}
+		outln(ans);
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
 	rtn 0;
 }

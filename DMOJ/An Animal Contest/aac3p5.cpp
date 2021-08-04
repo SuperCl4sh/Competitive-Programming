@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/aac3p5
 #include <bits/stdc++.h>
 //#include <ext/pb_ds/assoc_container.hpp>
 //using namespace __gnu_pbds;
@@ -119,28 +120,98 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
-int main() {
-	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+const int mxN=(int)(2e3);
+const int mxM=(int)(2e3);
+vt<str>grid(1);
+pii Left[mxN+5][mxM+5];
+pii Right[mxN+5][mxM+5];
+pii Up[mxN+5][mxM+5];
+pii Down[mxN+5][mxM+5];
+int N,M;
+int vis[mxN+1][mxM+1];
+int INF=(int)(1e9);
+pii dfs_left(int r, int c) {
+	if (r<=0||r>N||c<=0||c>M) rtn {-1,-1};
+	else if (Left[r][c].F!=-1&&Left[r][c].S!=-1) rtn Left[r][c];
+	else if (grid[r][c]!='.') rtn {r,c};
+	rtn Left[r][c]=dfs_left(r,c-1);
+}
+pii dfs_right(int r, int c) {
+	if (r<=0||r>N||c<=0||c>M) rtn {-1,-1};
+	else if (Right[r][c].F!=-1&&Right[r][c].S!=-1) rtn Right[r][c];
+	else if (grid[r][c]!='.') rtn {r,c};
+	rtn Right[r][c]=dfs_right(r,c+1);
+}
+pii dfs_up(int r, int c) {
+	if (r<=0||r>N||c<=0||c>M) rtn {-1,-1};
+	else if (Up[r][c].F!=-1&&Up[r][c].S!=-1) rtn Up[r][c];
+	else if (grid[r][c]!='.') rtn {r,c};
+	rtn Up[r][c]=dfs_up(r-1,c);
+}
+pii dfs_down(int r, int c) {
+	if (r<=0||r>N||c<=0||c>M) rtn {-1,-1};
+	else if (Down[r][c].F!=-1&&Down[r][c].S!=-1) rtn Down[r][c];
+	else if (grid[r][c]!='.') rtn {r,c};
+	rtn Down[r][c]=dfs_down(r+1,c);
+}
+void solve (int sx, int sy) {
+	priority_queue<pair<int,pii>>pq;
+	pq.P(mp(INF,mp(sx,sy)));
+	vis[sx][sy]=INF;
+	while (!pq.empty()) {
+		int canoe=pq.top().F,x=pq.top().S.F,y=pq.top().S.S;
+		pq.pop();
+		if (x<=0||y<=0||x>N||y>M) continue;
+		else if (vis[x][y]>canoe) continue;
+		rep (i,0,4) {
+			int nx=dx4[i]+x,ny=dy4[i]+y;
+			if (nx<=0||ny<=0||nx>N||ny>M) continue;
+			if (grid[nx][ny]=='.') {
+				int nxtx,nxty;
+				if (i==0) nxtx=Down[nx][ny].F,nxty=Down[nx][ny].S; //down
+				else if (i==1) nxtx=Up[nx][ny].F,nxty=Up[nx][ny].S; //up
+				else if (i==2) nxtx=Right[nx][ny].F,nxty=Right[nx][ny].S; //right
+				else nxtx=Left[nx][ny].F,nxty=Left[nx][ny].S; //left
+				if (nxtx!=-1) {
+					int req=max(abs(nxtx-x),abs(nxty-y))-1;
+					if (min(req,canoe)>vis[nxtx][nxty]) {vis[nxtx][nxty]=min(req,canoe);pq.P(mp(min(req,canoe),mp(nxtx,nxty)));}
+				}
+
+			}
+			else {
+				if (vis[nx][ny]<canoe) {vis[nx][ny]=canoe;pq.P(mp(canoe,mp(nx,ny)));}
+			}
 		}
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
+}
+int main() {
+	boost;
+	mem(vis,-1);
+	read(N,M);
+	rep (i,1,N+1) {
+		rep (j,1,M+1) Left[i][j]={-1,-1},Right[i][j]={-1,-1},Down[i][j]={-1,-1},Up[i][j]={-1,-1};
+	}
+	rep (i,0,N) {
+		str row;read(row);
+		row.insert(0," ");grid.pb(row);
+	}
+	rep (i,1,N+1) {
+		rep (j,1,M+1) {
+			if (grid[i][j]=='.') {
+				dfs_left(i,j);
+				dfs_right(i,j);
+				dfs_down(i,j);
+				dfs_up(i,j);
+			}
+		}
+	}
+	rep (i,1,M+1) {
+		if (grid[1][i]=='#') solve(1,i);
+	}
+	vt<int>ans;
+	rep (i,1,M+1) {
+		ans.pb((vis[N][i]==INF)?0:vis[N][i]);
+	}
+	outln(ans);
 	rtn 0;
 }

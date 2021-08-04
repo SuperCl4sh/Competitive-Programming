@@ -90,14 +90,13 @@ template<typename A, typename... types> void writeln(A s, types... s1) {
 template<typename A> void writeln(A s) {
 	out(s,'\n');
 }
-template<typename A> void outln(A s) {
-	out(s);
-	out('\n');
-}
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
-	out(s1...);
+	out(s1...,'\n');
+}
+template<typename A> void outln(A s) {
+	out(s);
 	out('\n');
 }
 
@@ -119,28 +118,61 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
+ll HASH=ll(1e9);
+vt<pii>ans;
+int N;
+unordered_map<ll,bool>dp;
+bool solve(int ind, int twos, int rem) {
+	if (!rem) rtn !twos;
+	else if (ind>=N) rtn 0;
+	ll bruh=ll(ind*31+twos)*HASH+rem;
+	if (dp.find(bruh)!=dp.end()) rtn dp[bruh];
+	rep (i,0,min(twos,N-ind)+1) {
+		ans.pb(mp(ind,i));
+		if (i) rem-=(i*(i+1))/2;
+		if (rem>=0&&solve(ind+i+1,twos-i,rem)) rtn 1;
+		if (i) rem+=(i*(i+1))/2;
+		ans.PB();
+	}
+	dp[bruh]=0;
+	rtn 0;
+}
 int main() {
 	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+	int K;read(K);
+	int l=-1,r=101,m;
+	while (r-l>1) {
+		m=l+r>>1;
+		if (m*(m+1)/2>=K) r=m;
+		else l=m;
+	}
+	if (!r) {
+		writeln(1,'\n',2);
+		rtn 0;
+	}
+	N=r;
+	int target=(N*(N+1))/2-K;
+	rep (i,0,N+1) {
+		if (solve(0,i,target)) {
+			vt<int>ret(N,1);
+			each(val,ans) {
+				rep (i,0,val.S) {
+					ret[val.F+i]=2;
+				}
+			}
+			/*
+			int check=0;
+			rep (i,0,N) {
+				int curr=0;
+				rep (j,i,N) {
+					curr=__gcd(curr,ret[j]);
+					if (curr==1) ++check;
+				}
+			}
+			assert(check==K);*/
+			writeln(N,'\n',ret);
+			rtn 0;
 		}
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
 	rtn 0;
 }

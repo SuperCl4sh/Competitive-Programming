@@ -47,7 +47,7 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 }
 template <typename A> void read(vt<A>&ar) {
 	EACH(a,ar) read(a);
-
+ 
 }
 template <typename A, typename... Types> void read(A&  num, Types&... num1) {
 	read(num);read(num1...);
@@ -70,7 +70,7 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) cout << ' ';
-
+ 
 	}
 }
 template <typename A, typename... Types> void out(A s, Types... s1) {
@@ -100,7 +100,7 @@ template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s1...);
 	out('\n');
 }
-
+ 
 template <typename T,typename A> T Pow(T a, A b) {
 	T ret=1;
 	while (b) {
@@ -119,28 +119,29 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
-int main() {
-	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+unordered_set<str>ans;
+void solve(int l, int r,str &S) {
+	ans.insert(S);
+	if (l==r) rtn;
+	else {
+		solve(l+1,r,S);
+		solve(l,r-1,S);
+		rep (i,l,r) {
+			swap(S[i],S[r]);
+			solve(l+1,r,S);
+			solve(l,r-1,S);
+			swap(S[i],S[r]);
 		}
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
+}
+int main() {
+	boost;
+	str S;read(S);
+	solve(0,sz(S)-1,S);
+	vt<str>bruh;
+	each(val,ans) bruh.pb(val);
+	sort(all(bruh));
+	outln(sz(bruh));
+	each(val,bruh) outln(val);
 	rtn 0;
 }

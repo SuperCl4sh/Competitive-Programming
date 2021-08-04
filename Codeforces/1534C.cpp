@@ -90,14 +90,13 @@ template<typename A, typename... types> void writeln(A s, types... s1) {
 template<typename A> void writeln(A s) {
 	out(s,'\n');
 }
-template<typename A> void outln(A s) {
-	out(s);
-	out('\n');
-}
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
-	out(s1...);
+	out(s1...,'\n');
+}
+template<typename A> void outln(A s) {
+	out(s);
 	out('\n');
 }
 
@@ -119,28 +118,34 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
+const int mxN=(int)(4e5);
+ll mod=(ll)(1e9)+7;
+int pos[2][mxN+5];bool vis[mxN+5];
+vt<vt<int>>game(2);
+void dfs(int node) {
+	if (vis[node]) rtn;
+	vis[node]=1;
+	dfs(pos[1][game[0][node]]);
+	dfs(pos[0][game[1][node]]);
+}
 int main() {
 	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+	int T;read(T);
+	while (T--) {
+		mem(vis,0);
+		int N;read(N);
+		game[0].resize(N);game[1].resize(N);
+		read(game);
+		rep (i,0,2) {
+			rep (j,0,N) pos[i][game[i][j]]=j;
 		}
+		ll comp=0;
+		rep (i,0,N) {
+			if (vis[i]) continue;
+			++comp;
+			dfs(i);
+		}
+		outln(Pow(2LL,comp,mod));
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
 	rtn 0;
 }

@@ -119,28 +119,40 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
-int main() {
-	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+const int mxN=(int)(5e3);
+vt<vt<pii>>adj(mxN+5);
+vt<pii>start;
+bool vis[mxN+5];int D;
+void solve() {
+	priority_queue<pii,vt<pii>,greater<pii>>pq;
+	each (nums,start) pq.P(mp(nums.S,nums.F));
+	int cost,node;
+	while (!pq.empty()) {
+		cost=pq.top().F,node=pq.top().S;
+		pq.pop();
+		if (node==D) break;
+		if (vis[node]) continue;
+		vis[node]=1;
+		each(nums,adj[node]) {
+			pq.P(mp(cost+nums.S,nums.F));
 		}
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	outln(cost);
+}
+int main() {
+	boost;
+	int N,T;read(N,T);
+	rep (_,0,T) {
+		int x,y,C;read(x,y,C);
+		adj[x].pb(mp(y,C));
+		if (x!=y) adj[y].pb(mp(x,C));
+	}
+	int K;read(K);
+	rep (_,0,K) {
+		int a,b;read(a,b);
+		start.pb(mp(a,b));
+	}
+	read(D);
+	solve();
 	rtn 0;
 }

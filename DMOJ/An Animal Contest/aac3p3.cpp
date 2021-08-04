@@ -1,3 +1,4 @@
+//https://dmoj.ca/problem/aac3p3
 #include <bits/stdc++.h>
 //#include <ext/pb_ds/assoc_container.hpp>
 //using namespace __gnu_pbds;
@@ -119,28 +120,22 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
 int main() {
 	boost;
 	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
-		}
+	vt<int>ar(N);read(ar);
+	sort(all(ar));
+	vt<int>ans;
+	for (int i=0,j=N-1;i<j;i++,j--) {
+		ans.pb(ar[i]);ans.pb(ar[j]);
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
+	if (N&1) ans.pb(ar[(N-1)/2]);
+	outln(ans);
+	rep (i,0,N-(N&1)) {
+		if (i&1) out('S');
+		else out('B');
+	}
+	if (N&1) out('E');
+	out('\n');
 	rtn 0;
 }

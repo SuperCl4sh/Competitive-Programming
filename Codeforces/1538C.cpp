@@ -90,14 +90,13 @@ template<typename A, typename... types> void writeln(A s, types... s1) {
 template<typename A> void writeln(A s) {
 	out(s,'\n');
 }
-template<typename A> void outln(A s) {
-	out(s);
-	out('\n');
-}
 template<typename A, typename... types> void outln(A s, types... s1) {
 	out(s);
 	if (sizeof...(s1)) out(' ');
-	out(s1...);
+	out(s1...,'\n');
+}
+template<typename A> void outln(A s) {
+	out(s);
 	out('\n');
 }
 
@@ -119,28 +118,30 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-vt<pii>moves;
-vt<vt<pii>>go={{{1,2},{1,3},{2,3}},{{1,3},{1,2},{3,2}}};
+const int mxN=(int)(2e5);
+vt<int>ar(mxN+5);
 int main() {
 	boost;
-	int N;read(N);
-	int curr=0;
-	deque<int>stacks[4];
-	rep (i,1,N+1) stacks[1].pb(i);
-	int cap=1<<N;
-	cap-=(N&1);
-	while (sz(moves)<cap-1) {
-		rep (i,0,3) {
-			int fro=go[N&1][i].F,to=go[N&1][i].S;
-			if (stacks[fro].empty()||!stacks[to].empty()&&stacks[fro].fr>stacks[to].fr) swap(fro,to);
-			stacks[to].pf(stacks[fro].fr);
-			stacks[fro].PF();
-			moves.pb(mp(fro,to));
+	int T;read(T);
+	while (T--) {
+		int N,L,R;read(N,L,R);
+		ar.resize(N);read(ar);
+		sort(all(ar));
+		ll ans=0;
+		int r=N-1,l=0,m=N-1;
+		while (ar[r]+ar[l]<L&&l<r) ++l;
+		while (m-1>l&&ar[l]+ar[m-1]>L) --m;
+		//outln('>',l,r);
+		while (r>l) {
+			while (r>l&&ar[r]+ar[l]>R) --r;
+			if (l==r) break;
+			while (m>l&&ar[l]+ar[m]>=L) --m;
+			if (l==m||ar[m]+ar[l]<L) ++m;
+			ans+=r-m+1;
+			//outln('>',l,r,m);
+			++l;
 		}
+		outln(ans);
 	}
-	if (N&1) {moves.pb(mp(1,3));stacks[3].pf(stacks[1].fr),stacks[1].PF();}
-	assert(stacks[1].empty()&&stacks[2].empty());
-	outln(sz(moves));
-	each(move,moves) outln(move);
 	rtn 0;
 }
