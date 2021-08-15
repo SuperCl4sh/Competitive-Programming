@@ -111,31 +111,20 @@ int main() {
 	boost;
 	int T;read(T);
 	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
+		int N;read(N);
+		vector<ll>ar(N);read(ar);
+		map<ll,ll>freq;
+		ll highest=0;
+		each(val,ar) highest=max(highest,val),freq[val]++;
+		ll ans=0,currFreq=0,currTot=0,prev=0;
+		each(go,freq) {
+			ll val=go.F,freqVal=go.S;
+			currTot+=(val-prev)*currFreq;
+			ans+=currTot*freqVal;
+			currFreq+=freqVal;
+			prev=val;
 		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
-		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+		outln(highest-ans);
 	}
 	return 0;
 }

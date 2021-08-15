@@ -13,7 +13,6 @@ typedef unsigned long long ull;
 #define pf push_front
 #define PF pop_front
 #define PB pop_back
-#define P push
 #define F first
 #define S second
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
@@ -66,6 +65,12 @@ template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s1...);
 }
 void write() {}
+void writeln() {
+	out('\n');
+}
+void outln() {
+	out('\n');
+}
 template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
@@ -107,35 +112,24 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
+int cnt[2][(int)(2e5)+5];
 int main() {
 	boost;
 	int T;read(T);
 	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
+		int A,B,K;read(A,B,K);
+		vector<int>tmp(K);read(tmp);
+		vector<int>tmp2(K);read(tmp2);
+		vector<pii>ar;
+		map<pii,int>check;
+		rep (i,0,K) ar.pb(mp(tmp[i],tmp2[i]));
+		memset(cnt,0,sizeof(cnt));
+		ll ans=0;
+		rep (i,0,K) {
+			ans+=i-(cnt[0][ar[i].F]+cnt[1][ar[i].S])+check[ar[i]];
+			check[ar[i]]++,cnt[0][ar[i].F]++,cnt[1][ar[i].S]++;
 		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
-		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+		outln(ans);
 	}
 	return 0;
 }

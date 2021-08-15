@@ -13,7 +13,6 @@ typedef unsigned long long ull;
 #define pf push_front
 #define PF pop_front
 #define PB pop_back
-#define P push
 #define F first
 #define S second
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
@@ -66,6 +65,12 @@ template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s1...);
 }
 void write() {}
+void writeln() {
+	out('\n');
+}
+void outln() {
+	out('\n');
+}
 template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
@@ -109,33 +114,25 @@ const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
 int main() {
 	boost;
-	int T;read(T);
-	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
-		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
-		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+	int N;read(N);N*=2;
+	vector<int>ar(N);read(ar);
+	vector<pii>ans;
+	map<int,vector<int>>freq;
+	rep (i,0,N) freq[ar[i]].pb(i);
+	priority_queue<pii>pq;
+	each(val,freq) pq.push(mp(sz(val.S),val.F));
+	while (sz(pq)>1) {
+		pii go=pq.top();pq.pop();
+		pii go2=pq.top();pq.pop();
+		ans.pb(mp(freq[go.S].back(),freq[go2.S].back()));
+		freq[go.S].PB(),freq[go2.S].PB();
+		if (go.F-1) pq.push(mp(go.F-1,go.S));
+		if (go2.F-1) pq.push(mp(go2.F-1,go2.S));
 	}
+	outln(sz(ans));
+	if (!pq.empty()) {
+		FOR (i,0,sz(freq[pq.top().S]),2) ans.pb(mp(freq[pq.top().S][i],freq[pq.top().S][i+1]));
+	}
+	each(weights,ans) outln(weights.F+1,weights.S+1);
 	return 0;
 }

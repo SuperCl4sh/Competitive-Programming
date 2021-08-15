@@ -13,7 +13,6 @@ typedef unsigned long long ull;
 #define pf push_front
 #define PF pop_front
 #define PB pop_back
-#define P push
 #define F first
 #define S second
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
@@ -66,6 +65,12 @@ template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s1...);
 }
 void write() {}
+void writeln() {
+	out('\n');
+}
+void outln() {
+	out('\n');
+}
 template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
@@ -110,32 +115,18 @@ const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1
 int main() {
 	boost;
 	int T;read(T);
-	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
+	rep (_,1,T+1) {
+		int N;read(N);
+		vector<ll>ar(N);read(ar);
+		ll curr=0,best=0;int start=0;
+		rep (i,0,2) {
+			curr=0;
+			FOR (j,i,N,2) curr+=ar[j];
+			if (curr>best) best=curr,start=i;
+		}
 		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
-		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
-		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+		rep (i,0,N) ((i&1)==start)?ans.pb(ar[i]):ans.pb(1);
+		outln(ans);
 	}
 	return 0;
 }

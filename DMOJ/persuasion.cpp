@@ -107,35 +107,32 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
+const int mxN=19;
+int MASK;
+vector<int>pies(mxN+1),wheels(mxN+1);
+int N;
+int dp[1<<mxN+1];
+int solve(int mask) {
+	if (mask==MASK) return 0;
+	else if (dp[mask]!=-1) return dp[mask];
+	int ret=INT_MIN;
+	int currInd=__builtin_popcount(mask);
+	rep (i,0,N) {
+		if (!((mask>>i)&1)) {
+			ret=max(ret,solve(mask|1<<i)+wheels[i]*pies[currInd]);
+		}
+		currInd++;
+		currInd%=N;
+	}
+	return dp[mask]=ret;
+}	
 int main() {
 	boost;
-	int T;read(T);
-	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
-		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
-		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
-	}
+	memset(dp,-1,sizeof(dp));
+	read(N);
+	MASK=(1<<N)-1;
+	wheels.resize(N);read(wheels);
+	pies.resize(N);read(pies);
+	outln(solve(0));
 	return 0;
 }

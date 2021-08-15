@@ -66,6 +66,12 @@ template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s1...);
 }
 void write() {}
+void writeln() {
+	out('\n');
+}
+void outln() {
+	out('\n');
+}
 template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
@@ -111,31 +117,27 @@ int main() {
 	boost;
 	int T;read(T);
 	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
+		int N;read(N);
+		vector<int>students(N);read(students);
+		vector<ll>skills(N);read(skills);
+		vector<vector<ll>>teams(N+1);
+		rep (i,0,N) teams[students[i]].pb(skills[i]);
+		rep (i,1,N+1) sort(all(teams[i]),greater<ll>());
+		vector<vector<ll>>psa(N+1);
+		rep (i,1,N+1) {
+			rep (j,0,sz(teams[i])) {
+				if (!j) psa[i].pb(0);
+				psa[i].pb(psa[i].back()+teams[i][j]);
+			}
 		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
+		vector<ll>ans(N,0);
+		rep (i,1,N+1) {
+			rep (j,1,sz(teams[i])+1) {
+				ll bad=psa[i][sz(teams[i])]-psa[i][sz(teams[i])-(sz(teams[i])%j)];
+				ans[j-1]+=psa[i][sz(teams[i])]-bad;
+			}
 		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+		outln(ans);
 	}
 	return 0;
 }

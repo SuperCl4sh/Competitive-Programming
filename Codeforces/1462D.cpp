@@ -13,7 +13,6 @@ typedef unsigned long long ull;
 #define pf push_front
 #define PF pop_front
 #define PB pop_back
-#define P push
 #define F first
 #define S second
 #define boost ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
@@ -66,6 +65,12 @@ template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s1...);
 }
 void write() {}
+void writeln() {
+	out('\n');
+}
+void outln() {
+	out('\n');
+}
 template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
@@ -111,31 +116,29 @@ int main() {
 	boost;
 	int T;read(T);
 	while (T--) {
-		int N,K;read(N,K);
+		int N;read(N);
 		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
+		vector<int>divisors;
+		int tot=accumulate(all(ar),0);
+		for (int i=1;i*i<=tot;i++) {
+			if (!(tot%i)) {
+				divisors.pb(i);
+				if ((int)(tot/i)!=i) divisors.pb(tot/i);
+			}
 		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
+		int ans=N-1;
+		each(divisor,divisors) {
+			int curr=0,op=0;
+			rep (i,0,N) {
+				if (!curr&&ar[i]==divisor) continue;
+				if (curr) ++op;	
+				curr+=ar[i];
+				if (curr>divisor) break;
+				else curr%=divisor;
+			}
+			if (!curr) ans=min(ans,op);
 		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+		outln(ans);
 	}
 	return 0;
 }

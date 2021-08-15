@@ -16,8 +16,5 @@ for _ in range(T):
                 break
             else: W+=A
         else: W+=A
-    else:
-        assert 0
-    assert left%(A*B)!=0!=right%(A*B) and left+right==W*B
     print "YES\n",left,right,W*B
 

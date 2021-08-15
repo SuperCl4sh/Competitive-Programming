@@ -66,6 +66,12 @@ template <typename A, typename... Types> void out(A s, Types... s1) {
 	out(s1...);
 }
 void write() {}
+void outln() {
+	out('\n');
+}
+void writeln() {
+	out('\n');
+}
 template<typename A, typename... types> void write(A s, types... s1) {
 	out(s);
 	write(s1...);
@@ -107,35 +113,28 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
+string S;
+ll dp[2][(int)(2e5)+5];
+ll solve(int ind, int dig) {
+	if (ind==sz(S)||dig!=S[ind]-'0'&&S[ind]!='?') return 0LL;
+	else if (dp[dig][ind]!=-1) return dp[dig][ind];
+	return dp[dig][ind]=solve(ind+1,!dig)+1;
+}
 int main() {
 	boost;
 	int T;read(T);
 	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
+		memset(dp,-1,sizeof(dp));
+		read(S);
+		ll ans=0;
+		rep (i,0,sz(S)) {
+			ll best=0;
+			rep (dig,0,2) {
+				best=max(best,solve(i,dig));
+			}
+			ans+=best;
 		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
-		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
-		}
-		outln(grid);
-
+		outln(ans);	
 	}
 	return 0;
 }

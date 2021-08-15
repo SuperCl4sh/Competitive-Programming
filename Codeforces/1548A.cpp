@@ -107,35 +107,47 @@ template <typename T, typename A, typename B> T Pow(T a, A b, B mod) {
 //constants
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
+const int mxN=(int)(2e5);
+vector<set<int>>adj(mxN+5);
+bool marked[mxN+5];
 int main() {
 	boost;
-	int T;read(T);
-	while (T--) {
-		int N,K;read(N,K);
-		vector<int>ar(N);read(ar);
-		vector<vector<int>>freq(N+1);
-		rep (i,0,N) freq[ar[i]].pb(i);
-		sort(all(freq),[&](const vector<int>A, const vector<int>B) {
-				return sz(A)<sz(B);
-				});
-		vector<int>ans;
-		while (!freq.empty()&&sz(freq.back())>=K) {
-			ans.insert(ans.end(),freq.back().begin(),freq.back().begin()+K);
-			freq.PB();
+	int N,M;read(N,M);
+	int U,V;
+	rep (i,0,M) {
+		read(U,V);
+		adj[U].insert(V),adj[V].insert(U);
+	}
+	int cnt=0;
+	rep (i,1,N+1) {
+		if (!adj[i].empty()&&*adj[i].rbegin()>i) marked[i]=1,++cnt;
+	}
+	int Q;read(Q);
+	while (Q--) {
+		int query;read(query);
+		if (query==1) {
+			read(U,V);
+			adj[U].insert(V),adj[V].insert(U);
+			if (!marked[U]) {
+				if (*adj[U].rbegin()>U) marked[U]=1,++cnt;
+			}
+			if (!marked[V]) {
+				if (*adj[V].rbegin()>V) marked[V]=1,++cnt;
+			}
 		}
-		ROF (i,sz(freq)-1,-1,1) {
-			if (freq[i].empty()) continue;
-			ans.insert(ans.end(),all(freq[i]));
+		else if (query==2) {
+			read(U,V);
+			adj[U].erase(adj[U].find(V)),adj[V].erase(adj[V].find(U));
+			if (marked[U]) {
+				if (adj[U].empty()||*adj[U].rbegin()<U) marked[U]=0,--cnt;
+			}
+			if (marked[V]) {
+				if (adj[V].empty()||*adj[V].rbegin()<V) marked[V]=0,--cnt;
+			}
 		}
-		while (sz(ans)%K) ans.PB();
-		vector<int>grid(N,0);
-		int id=1;
-		rep (i,0,sz(ans)) {
-			grid[ans[i]]=id++;
-			if (id>K) id-=K;
+		else {
+			outln(N-cnt);
 		}
-		outln(grid);
-
 	}
 	return 0;
 }
