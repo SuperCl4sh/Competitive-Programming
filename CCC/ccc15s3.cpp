@@ -1,10 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 /*
 #pragma GCC optimization ("O3")
 #pragma GCC optimization ("unroll-loops")
 */
 //^speed
+
+
 //typedefs
 typedef long long ll;
 typedef string str;
@@ -16,6 +19,7 @@ typedef pair<double,double>pdd;
 typedef unsigned long long ull;
 typedef pair<ld,ld>pld;
 typedef pair<str,str>pss;
+
 //defines
 #define mp make_pair
 #define pb push_back
@@ -46,6 +50,7 @@ typedef pair<str,str>pss;
 #define rando(a,b) rand()%(b-a)+a
 #define pc putchar
 #define gc getchar
+
 //input
 template <typename T> void read(T& num) {
 	num=0;
@@ -55,11 +60,13 @@ template <typename T> void read(T& num) {
 	if (c=='-') c=gc(),isNeg=1;
 	for (;(c>47&&c<58); c=gc()) num=num*10+c-48;
 	if (isNeg) num*=-1;
+
 }
 void read(str &s) {
 	s="";
 	char c;
 	while((c=gc())&&(c!=-1&&c!='\n'&&c!='\r'&&c!=' ')) s+=c;
+
 }
 void read(ld &num) {
 	str s="";
@@ -81,10 +88,12 @@ template<typename A, typename B> void read(pair<A,B> &a) {
 }
 template <typename G> void read(vt<G>&ar) {
 	EACH(a,ar) read(a);
+
 }
 template <typename H, typename... Types> void read(H&  num, Types&... num1) {
 	read(num);read(num1...);
 }
+
 //output
 void out(int n) {
 	if (n<0) {
@@ -135,6 +144,7 @@ template<typename T> void out(vt<T>ar) {
 	rep (i,0,sz(ar)) {
 		out(ar[i]);
 		if (i+1<sz(ar)) pc(' ');
+
 	}
 }
 template <typename h, typename... types> void out(h s, types... s1) {
@@ -166,6 +176,7 @@ template<typename v> void outln(v s) {
 	out(s);
 	pc('\n');
 }
+
 template <typename T,typename S> ll Pow(T a, S b) {
 	ll ret=1;
 	while (b) {
@@ -183,27 +194,28 @@ template <typename T=ll, typename S, typename M> T Pow(T a, S b, M mod) {
 void Time(clock_t start) {
 	writeln("Process took ",(clock()-start)/double(CLOCKS_PER_SEC)," seconds.");
 }
+
 //constants
 const ll MOD = 1000000007LL;
 const int dx8[8]={1,1,-1,-1,2,2,-2,-2},dy8[8]={2,-2,2,-2,1,-1,1,-1},dx4[4]={1,-1,0,0},dy4[4]={0,0,1,-1}; 
+
 clock_t start;
 /*--------------------------------------------------------------PROGRAM START-------------------------------------------------------------------------*/
-bitset<100005>used;
 int main() {
 	boost;
-	used.flip();
 	int G,P;
 	read(G,P);
 	int a;
+	set<int>gates; for (int i = 1; i <= G; i++) gates.insert(i);
+	int ans = 0;
 	rep (_,0,P) {
 		read(a);
-		
-		int pos=used._Find_next(G-a);
-		if (!used[pos]||pos>G) {outln(_);rtn 0;}
-		used[pos]=0;
+		auto it = gates.lower_bound(a);
+		if (it == gates.end() || (*it) > a) --it;
+		if (it == gates.end() || (*it) > a) break;
+		gates.erase(it), ++ans;
 	}
-	outln(P);
+	outln(ans);
 	
 	rtn 0;
 }
-
